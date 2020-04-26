@@ -67,11 +67,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://trang1618.github.io/treeheatr-manuscript/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/f7c2d165e4df4e291b34879fda110eb09c567053/" />
+  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/c258eb67507010022f560658148e3811a16d983f/" />
 
-  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/f7c2d165e4df4e291b34879fda110eb09c567053/" />
+  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/c258eb67507010022f560658148e3811a16d983f/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/f7c2d165e4df4e291b34879fda110eb09c567053/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/c258eb67507010022f560658148e3811a16d983f/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -105,9 +105,9 @@ title: 'treeheatr: an R package for interpretable decision tree visualizations'
 
 <small><em>
 This manuscript
-([permalink](https://trang1618.github.io/treeheatr-manuscript/v/f7c2d165e4df4e291b34879fda110eb09c567053/))
+([permalink](https://trang1618.github.io/treeheatr-manuscript/v/c258eb67507010022f560658148e3811a16d983f/))
 was automatically generated
-from [trang1618/treeheatr-manuscript@f7c2d16](https://github.com/trang1618/treeheatr-manuscript/tree/f7c2d165e4df4e291b34879fda110eb09c567053)
+from [trang1618/treeheatr-manuscript@c258eb6](https://github.com/trang1618/treeheatr-manuscript/tree/c258eb67507010022f560658148e3811a16d983f)
 on April 26, 2020.
 </em></small>
 
