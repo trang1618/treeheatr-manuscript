@@ -67,11 +67,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://trang1618.github.io/treeheatr-manuscript/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/8dd393fb810190c7ef4e71a8f9784fb29e338bee/" />
+  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/820d95e0fdb2d0ea8aca4740342f4bd484e46e88/" />
 
-  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/8dd393fb810190c7ef4e71a8f9784fb29e338bee/" />
+  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/820d95e0fdb2d0ea8aca4740342f4bd484e46e88/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/8dd393fb810190c7ef4e71a8f9784fb29e338bee/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/820d95e0fdb2d0ea8aca4740342f4bd484e46e88/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -105,9 +105,9 @@ title: 'treeheatr: an R package for interpretable decision tree visualizations'
 
 <small><em>
 This manuscript
-([permalink](https://trang1618.github.io/treeheatr-manuscript/v/8dd393fb810190c7ef4e71a8f9784fb29e338bee/))
+([permalink](https://trang1618.github.io/treeheatr-manuscript/v/820d95e0fdb2d0ea8aca4740342f4bd484e46e88/))
 was automatically generated
-from [trang1618/treeheatr-manuscript@8dd393f](https://github.com/trang1618/treeheatr-manuscript/tree/8dd393fb810190c7ef4e71a8f9784fb29e338bee)
+from [trang1618/treeheatr-manuscript@820d95e](https://github.com/trang1618/treeheatr-manuscript/tree/820d95e0fdb2d0ea8aca4740342f4bd484e46e88)
 on April 29, 2020.
 </em></small>
 
@@ -159,17 +159,23 @@ It comes with a detailed vignette that is automatically built with continuous in
 ## Introduction
 
 Tree-based algorithms such as random forests and gradient boosted trees are widely used techniques that comprise an important section of supervised machine learning.
-Decision trees are primitive constituents of many important  including .
-Visualizing and intepreting their building blocks, the single decision trees, are the first steps toward understanding these more complex tree-based structures.
-Nonetheless, existing visualization softwares frequently treat all nodes similarly, leaving limited options for improving visualization at the leaf nodes.
-Currently, at leaf nodes, state-of-the-art libraries such as Python's [dtreeviz](https://github.com/parrt/dtreeviz) draw pie charts.
+Visualizing and intepreting their building blocks, the single decision trees, are the first steps toward understanding these complex tree-based structures.
+However, it is difficult to incorporate the tree's predictive performance and the feature space in a single visualization.
+Existing softwares frequently treat all nodes in a decision tree similarly, leaving limited options for improving information presentation at the leaf nodes.
+For example, state-of-the-art libraries such as Python's [dtreeviz](https://github.com/parrt/dtreeviz), while producing aesthetic trees with detailed histograms at inner nodes, draw pie chart at leaf nodes.
 
-In a visualization, it is difficult to find the sweet spot on the spectrum from enhancing understanding to overloading information. 
+We have developed the *treeheatr* R package to utilize the leaf node space to show the data as a heatmap where the samples and features are optionally clustered to improve interpretation.
+Given a classification or regression problem, this example one line of code will generate the conditional inference tree, perform clustering, and produce a *ggplot* object that can be viewed in RStudio's viewer pane, saved to a graphic file, or embedded in an RMarkdown document:
+```
+heat_tree(data, task = 'classification', target_lab = 'Outcome')
+```
 
-an opportunity for the data to be shown at the leaf nodes as a heatmap.
+This article is organized as follows. 
+In Section 2, we describe the important functions and corresponding arguments in *treeheatr*.
+We demonstrate the flexibility the user has in tweaking these arguments to enhance understanding of the tree-based models applied on their dataset.
+In Section 3, we apply the *treeheatr* package to a real-world clinical dataset from a study of diabetes mellitus in a high risk population of Pima Indians [@pmcid:PMC2245318].
+[Finally, we discuss general guidelines for creating effective decision tree-heatmap visualization.]
 
-heatmap: complimentary of histogram at non-leaf nodes.
-correlation: implied from clustering
 
 
 ## Materials and methods
