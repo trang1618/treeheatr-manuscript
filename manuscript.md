@@ -67,11 +67,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://trang1618.github.io/treeheatr-manuscript/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/5e9ecdc3db429f5deb865c115862556a31218a74/" />
+  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/8dd393fb810190c7ef4e71a8f9784fb29e338bee/" />
 
-  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/5e9ecdc3db429f5deb865c115862556a31218a74/" />
+  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/8dd393fb810190c7ef4e71a8f9784fb29e338bee/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/5e9ecdc3db429f5deb865c115862556a31218a74/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/8dd393fb810190c7ef4e71a8f9784fb29e338bee/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -105,9 +105,9 @@ title: 'treeheatr: an R package for interpretable decision tree visualizations'
 
 <small><em>
 This manuscript
-([permalink](https://trang1618.github.io/treeheatr-manuscript/v/5e9ecdc3db429f5deb865c115862556a31218a74/))
+([permalink](https://trang1618.github.io/treeheatr-manuscript/v/8dd393fb810190c7ef4e71a8f9784fb29e338bee/))
 was automatically generated
-from [trang1618/treeheatr-manuscript@5e9ecdc](https://github.com/trang1618/treeheatr-manuscript/tree/5e9ecdc3db429f5deb865c115862556a31218a74)
+from [trang1618/treeheatr-manuscript@8dd393f](https://github.com/trang1618/treeheatr-manuscript/tree/8dd393fb810190c7ef4e71a8f9784fb29e338bee)
 on April 29, 2020.
 </em></small>
 
@@ -194,7 +194,7 @@ heat_tree(
 
 The heat_tree() function takes a data frame, a character string indicating the column name associated with the outcome/phenotype (e.g., Diabetes status) and other optional arguments such as the mapping of the outcome label. 
 
-![example/diabetes.png](A decision tree for predicting whether an individual has diabetes.){#fig:example}
+![A decision tree-heatmap for predicting whether an individual has diabetes.](images/diabetes.png){#fig:example}
 
 
 
