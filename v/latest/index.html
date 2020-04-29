@@ -51,9 +51,9 @@
   <meta name="citation_fulltext_html_url" content="https://trang1618.github.io/treeheatr-manuscript/" />
   <meta name="citation_pdf_url" content="https://trang1618.github.io/treeheatr-manuscript/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://trang1618.github.io/treeheatr-manuscript/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/8dd393fb810190c7ef4e71a8f9784fb29e338bee/" />
-  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/8dd393fb810190c7ef4e71a8f9784fb29e338bee/" />
-  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/8dd393fb810190c7ef4e71a8f9784fb29e338bee/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/820d95e0fdb2d0ea8aca4740342f4bd484e46e88/" />
+  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/820d95e0fdb2d0ea8aca4740342f4bd484e46e88/" />
+  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/820d95e0fdb2d0ea8aca4740342f4bd484e46e88/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -67,9 +67,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://trang1618.github.io/treeheatr-manuscript/v/8dd393fb810190c7ef4e71a8f9784fb29e338bee/">permalink</a>)
+(<a href="https://trang1618.github.io/treeheatr-manuscript/v/820d95e0fdb2d0ea8aca4740342f4bd484e46e88/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/trang1618/treeheatr-manuscript/tree/8dd393fb810190c7ef4e71a8f9784fb29e338bee">trang1618/treeheatr-manuscript@8dd393f</a>
+from <a href="https://github.com/trang1618/treeheatr-manuscript/tree/820d95e0fdb2d0ea8aca4740342f4bd484e46e88">trang1618/treeheatr-manuscript@820d95e</a>
 on April 29, 2020.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -109,14 +109,18 @@ It comes with a detailed vignette that is automatically built with continuous in
 <h3 id="supplementary-information">Supplementary information</h3>
 <h2 id="introduction">Introduction</h2>
 <p>Tree-based algorithms such as random forests and gradient boosted trees are widely used techniques that comprise an important section of supervised machine learning.
-Decision trees are primitive constituents of many important including .
-Visualizing and intepreting their building blocks, the single decision trees, are the first steps toward understanding these more complex tree-based structures.
-Nonetheless, existing visualization softwares frequently treat all nodes similarly, leaving limited options for improving visualization at the leaf nodes.
-Currently, at leaf nodes, state-of-the-art libraries such as Python’s <a href="https://github.com/parrt/dtreeviz">dtreeviz</a> draw pie charts.</p>
-<p>In a visualization, it is difficult to find the sweet spot on the spectrum from enhancing understanding to overloading information.</p>
-<p>an opportunity for the data to be shown at the leaf nodes as a heatmap.</p>
-<p>heatmap: complimentary of histogram at non-leaf nodes.
-correlation: implied from clustering</p>
+Visualizing and intepreting their building blocks, the single decision trees, are the first steps toward understanding these complex tree-based structures.
+However, it is difficult to incorporate the tree’s predictive performance and the feature space in a single visualization.
+Existing softwares frequently treat all nodes in a decision tree similarly, leaving limited options for improving information presentation at the leaf nodes.
+For example, state-of-the-art libraries such as Python’s <a href="https://github.com/parrt/dtreeviz">dtreeviz</a>, while producing aesthetic trees with detailed histograms at inner nodes, draw pie chart at leaf nodes.</p>
+<p>We have developed the <em>treeheatr</em> R package to utilize the leaf node space to show the data as a heatmap where the samples and features are optionally clustered to improve interpretation.
+Given a classification or regression problem, this example one line of code will generate the conditional inference tree, perform clustering, and produce a <em>ggplot</em> object that can be viewed in RStudio’s viewer pane, saved to a graphic file, or embedded in an RMarkdown document:</p>
+<pre><code>heat_tree(data, task = &#39;classification&#39;, target_lab = &#39;Outcome&#39;)</code></pre>
+<p>This article is organized as follows.
+In Section 2, we describe the important functions and corresponding arguments in <em>treeheatr</em>.
+We demonstrate the flexibility the user has in tweaking these arguments to enhance understanding of the tree-based models applied on their dataset.
+In Section 3, we apply the <em>treeheatr</em> package to a real-world clinical dataset from a study of diabetes mellitus in a high risk population of Pima Indians <span class="citation" data-cites="jhtzkO3n">[<a href="#ref-jhtzkO3n" role="doc-biblioref">1</a>]</span>.
+[Finally, we discuss general guidelines for creating effective decision tree-heatmap visualization.]</p>
 <h2 id="materials-and-methods">Materials and methods</h2>
 <h2 id="treeheatr-a-simple-example">treeheatr: a simple example</h2>
 <p>This example visualizes the conditional inference tree model built to predict whether or not a patient has diabetes from a dataset provided by the National Institute of Diabetes and Digestive and Kidney Diseases <span class="citation" data-cites="jhtzkO3n">[<a href="#ref-jhtzkO3n" role="doc-biblioref">1</a>]</span>.
