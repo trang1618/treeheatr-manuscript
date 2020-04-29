@@ -67,11 +67,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://trang1618.github.io/treeheatr-manuscript/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/b3e869a2fc6fb2739da0c005d5c05922404bae0d/" />
+  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/5e9ecdc3db429f5deb865c115862556a31218a74/" />
 
-  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/b3e869a2fc6fb2739da0c005d5c05922404bae0d/" />
+  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/5e9ecdc3db429f5deb865c115862556a31218a74/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/b3e869a2fc6fb2739da0c005d5c05922404bae0d/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/5e9ecdc3db429f5deb865c115862556a31218a74/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -105,9 +105,9 @@ title: 'treeheatr: an R package for interpretable decision tree visualizations'
 
 <small><em>
 This manuscript
-([permalink](https://trang1618.github.io/treeheatr-manuscript/v/b3e869a2fc6fb2739da0c005d5c05922404bae0d/))
+([permalink](https://trang1618.github.io/treeheatr-manuscript/v/5e9ecdc3db429f5deb865c115862556a31218a74/))
 was automatically generated
-from [trang1618/treeheatr-manuscript@b3e869a](https://github.com/trang1618/treeheatr-manuscript/tree/b3e869a2fc6fb2739da0c005d5c05922404bae0d)
+from [trang1618/treeheatr-manuscript@5e9ecdc](https://github.com/trang1618/treeheatr-manuscript/tree/5e9ecdc3db429f5deb865c115862556a31218a74)
 on April 29, 2020.
 </em></small>
 
@@ -143,12 +143,75 @@ on April 29, 2020.
 ## Abstract {.page_break_before}
 
 ### Summary
-*treeheatr* is an R package for easily creating decision tree visualizations with the data represented as heatmaps at the tree's terminal nodes.
+*treeheatr* is an R package for creating interpretable decision tree visualizations with the data represented as heatmaps at the tree's terminal nodes.
+Going beyond the if-then step-by-step logic of a decision tree, the inclusion of a heatmap offers a broader view of the classification or regression problem and provides meaningful clarification of different node splits in the tree.
+Working harmoniously with other packages, *treeheatr* empowers the user with refined controls over the statistical threshold and presentation of the tree and heatmap.
 
-### Availability and Implementation
-The *treeheatr* package is freely available under the permissive MIT license at https://trang1618.github.io/treeheatr.
+### Availability and implementation
+The *treeheatr* package is freely available under the permissive [MIT license](https://opensource.org/licenses/MIT) at <https://trang1618.github.io/treeheatr>.
 It comes with a detailed vignette that is automatically built with continuous integration.
 
+### Contact
+<ttle@pennmedicine.upenn.edu>
+
+### Supplementary information
+
+## Introduction
+
+Tree-based algorithms such as random forests and gradient boosted trees are widely used techniques that comprise an important section of supervised machine learning.
+Decision trees are primitive constituents of many important  including .
+Visualizing and intepreting their building blocks, the single decision trees, are the first steps toward understanding these more complex tree-based structures.
+Nonetheless, existing visualization softwares frequently treat all nodes similarly, leaving limited options for improving visualization at the leaf nodes.
+Currently, at leaf nodes, state-of-the-art libraries such as Python's [dtreeviz](https://github.com/parrt/dtreeviz) draw pie charts.
+
+In a visualization, it is difficult to find the sweet spot on the spectrum from enhancing understanding to overloading information. 
+
+an opportunity for the data to be shown at the leaf nodes as a heatmap.
+
+heatmap: complimentary of histogram at non-leaf nodes.
+correlation: implied from clustering
+
+
+## Materials and methods
+
+
+
+## treeheatr: a simple example
+
+This example visualizes the conditional inference tree model built to predict whether or not a patient has diabetes from a dataset provided by the National Institute of Diabetes and Digestive and Kidney Diseases [@pmcid:PMC2245318].
+This dataset of female patients at least 21 years old of Pima Indian heritage near Phoenix, Arizona was downloaded from [Kaggle](https://www.kaggle.com/uciml/pima-indians-diabetes-database) and has eight features: age, number of times pregnant, plasma glucose concentration, diastolic blood pressure, skin fold thickness, 2-hour serum insulin, body mass index and diabetes pedigree function.
+Detailed descriptions of these variables and data source can be found on the Kaggle page.
+
+The following lines of code computes and visualizes the conditional decision tree along with the heatmap containing features that are important for building this model (Fig. @fig:example):
+
+```
+heat_tree(
+  data = diabetes,
+  target_lab = 'Diabetes status',
+  label_map = c(`0` = 'Negative', `1` = 'Positive')
+)
+```
+
+The heat_tree() function takes a data frame, a character string indicating the column name associated with the outcome/phenotype (e.g., Diabetes status) and other optional arguments such as the mapping of the outcome label. 
+
+![example/diabetes.png](A decision tree for predicting whether an individual has diabetes.){#fig:example}
+
+
+
+
+## Conclusion
+
+In this paper, we presented the new type of integrated visualization of decision trees and heatmaps, which provides a comprehensive data overview as well as model interpretation.
+We demonstrated that [...]
+The visualization is implemented in an easily installed package with a detailed vignette.
+Released as open source software, {treeheatr} hopes to receive contribution from other developers.
+
+Future works on *treeheatr* include enhancements such as supporting heatmap visualization of a holdout set and highlighting the tree branches that point to a specific holdout sample.
+
+## Acknowledgements
+
+The *treeheatr* package was made possible by leveraging integral R packages including *ggplot2* [@isbn:978-0387981406], *partykit* [@url:http://jmlr.org/papers/v16/hothorn15a.html], *ggparty* [@url:https://github.com/martin-borkovec/ggparty] and many others.
+We would also like to thank Daniel Himmelstein for his helpful comments on the continuous integration configuration.
 
 ## References {.page_break_before}
 

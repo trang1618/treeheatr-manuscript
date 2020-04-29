@@ -51,9 +51,9 @@
   <meta name="citation_fulltext_html_url" content="https://trang1618.github.io/treeheatr-manuscript/" />
   <meta name="citation_pdf_url" content="https://trang1618.github.io/treeheatr-manuscript/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://trang1618.github.io/treeheatr-manuscript/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/b3e869a2fc6fb2739da0c005d5c05922404bae0d/" />
-  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/b3e869a2fc6fb2739da0c005d5c05922404bae0d/" />
-  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/b3e869a2fc6fb2739da0c005d5c05922404bae0d/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/5e9ecdc3db429f5deb865c115862556a31218a74/" />
+  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/5e9ecdc3db429f5deb865c115862556a31218a74/" />
+  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/5e9ecdc3db429f5deb865c115862556a31218a74/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -67,9 +67,9 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://trang1618.github.io/treeheatr-manuscript/v/b3e869a2fc6fb2739da0c005d5c05922404bae0d/">permalink</a>)
+(<a href="https://trang1618.github.io/treeheatr-manuscript/v/5e9ecdc3db429f5deb865c115862556a31218a74/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/trang1618/treeheatr-manuscript/tree/b3e869a2fc6fb2739da0c005d5c05922404bae0d">trang1618/treeheatr-manuscript@b3e869a</a>
+from <a href="https://github.com/trang1618/treeheatr-manuscript/tree/5e9ecdc3db429f5deb865c115862556a31218a74">trang1618/treeheatr-manuscript@5e9ecdc</a>
 on April 29, 2020.
 </em></small></p>
 <h2 id="authors">Authors</h2>
@@ -98,14 +98,76 @@ Department of Biostatistics, Epidemiology and Informatics, Institute for Biomedi
 </ul>
 <h2 class="page_break_before" id="abstract">Abstract</h2>
 <h3 id="summary">Summary</h3>
-<p><em>treeheatr</em> is an R package for easily creating decision tree visualizations with the data represented as heatmaps at the tree’s terminal nodes.</p>
-<h3 id="availability-and-implementation">Availability and Implementation</h3>
-<p>The <em>treeheatr</em> package is freely available under the permissive MIT license at https://trang1618.github.io/treeheatr.
+<p><em>treeheatr</em> is an R package for creating interpretable decision tree visualizations with the data represented as heatmaps at the tree’s terminal nodes.
+Going beyond the if-then step-by-step logic of a decision tree, the inclusion of a heatmap offers a broader view of the classification or regression problem and provides meaningful clarification of different node splits in the tree.
+Working harmoniously with other packages, <em>treeheatr</em> empowers the user with refined controls over the statistical threshold and presentation of the tree and heatmap.</p>
+<h3 id="availability-and-implementation">Availability and implementation</h3>
+<p>The <em>treeheatr</em> package is freely available under the permissive <a href="https://opensource.org/licenses/MIT">MIT license</a> at <a href="https://trang1618.github.io/treeheatr" class="uri">https://trang1618.github.io/treeheatr</a>.
 It comes with a detailed vignette that is automatically built with continuous integration.</p>
+<h3 id="contact">Contact</h3>
+<p><a href="mailto:ttle@pennmedicine.upenn.edu" class="email">ttle@pennmedicine.upenn.edu</a></p>
+<h3 id="supplementary-information">Supplementary information</h3>
+<h2 id="introduction">Introduction</h2>
+<p>Tree-based algorithms such as random forests and gradient boosted trees are widely used techniques that comprise an important section of supervised machine learning.
+Decision trees are primitive constituents of many important including .
+Visualizing and intepreting their building blocks, the single decision trees, are the first steps toward understanding these more complex tree-based structures.
+Nonetheless, existing visualization softwares frequently treat all nodes similarly, leaving limited options for improving visualization at the leaf nodes.
+Currently, at leaf nodes, state-of-the-art libraries such as Python’s <a href="https://github.com/parrt/dtreeviz">dtreeviz</a> draw pie charts.</p>
+<p>In a visualization, it is difficult to find the sweet spot on the spectrum from enhancing understanding to overloading information.</p>
+<p>an opportunity for the data to be shown at the leaf nodes as a heatmap.</p>
+<p>heatmap: complimentary of histogram at non-leaf nodes.
+correlation: implied from clustering</p>
+<h2 id="materials-and-methods">Materials and methods</h2>
+<h2 id="treeheatr-a-simple-example">treeheatr: a simple example</h2>
+<p>This example visualizes the conditional inference tree model built to predict whether or not a patient has diabetes from a dataset provided by the National Institute of Diabetes and Digestive and Kidney Diseases <span class="citation" data-cites="jhtzkO3n">[<a href="#ref-jhtzkO3n" role="doc-biblioref">1</a>]</span>.
+This dataset of female patients at least 21 years old of Pima Indian heritage near Phoenix, Arizona was downloaded from <a href="https://www.kaggle.com/uciml/pima-indians-diabetes-database">Kaggle</a> and has eight features: age, number of times pregnant, plasma glucose concentration, diastolic blood pressure, skin fold thickness, 2-hour serum insulin, body mass index and diabetes pedigree function.
+Detailed descriptions of these variables and data source can be found on the Kaggle page.</p>
+<p>The following lines of code computes and visualizes the conditional decision tree along with the heatmap containing features that are important for building this model (Fig. <a href="#fig:example">1</a>):</p>
+<pre><code>heat_tree(
+  data = diabetes,
+  target_lab = &#39;Diabetes status&#39;,
+  label_map = c(`0` = &#39;Negative&#39;, `1` = &#39;Positive&#39;)
+)</code></pre>
+<p>The heat_tree() function takes a data frame, a character string indicating the column name associated with the outcome/phenotype (e.g., Diabetes status) and other optional arguments such as the mapping of the outcome label.</p>
+<div id="fig:example" class="fignos">
+<figure>
+<img src="A%20decision%20tree%20for%20predicting%20whether%20an%20individual%20has%20diabetes." alt="" /><figcaption><span>Figure 1:</span> example/diabetes.png</figcaption>
+</figure>
+</div>
+<h2 id="conclusion">Conclusion</h2>
+<p>In this paper, we presented the new type of integrated visualization of decision trees and heatmaps, which provides a comprehensive data overview as well as model interpretation.
+We demonstrated that […]
+The visualization is implemented in an easily installed package with a detailed vignette.
+Released as open source software, {treeheatr} hopes to receive contribution from other developers.</p>
+<p>Future works on <em>treeheatr</em> include enhancements such as supporting heatmap visualization of a holdout set and highlighting the tree branches that point to a specific holdout sample.</p>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>The <em>treeheatr</em> package was made possible by leveraging integral R packages including <em>ggplot2</em> <span class="citation" data-cites="1BbEovI1a">[<a href="#ref-1BbEovI1a" role="doc-biblioref">2</a>]</span>, <em>partykit</em> <span class="citation" data-cites="12dwNgm6Q">[<a href="#ref-12dwNgm6Q" role="doc-biblioref">3</a>]</span>, <em>ggparty</em> <span class="citation" data-cites="BTBYOSXq">[<a href="#ref-BTBYOSXq" role="doc-biblioref">4</a>]</span> and many others.
+We would also like to thank Daniel Himmelstein for his helpful comments on the continuous integration configuration.</p>
 <h2 class="page_break_before" id="references">References</h2>
 <!-- Explicitly insert bibliography here -->
-<div id="refs" role="doc-bibliography">
-
+<div id="refs" class="references hanging-indent" role="doc-bibliography">
+<div id="ref-jhtzkO3n">
+<p>1. <strong>Using the ADAP Learning Algorithm to Forecast the Onset of Diabetes Mellitus</strong><br />
+Jack W. Smith, J. E. Everhart, W. C. Dickson, W. C. Knowler, R. S. Johannes<br />
+<em>Proceedings of the Annual Symposium on Computer Application in Medical Care</em> (1988-11-09) <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2245318/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2245318/</a><br />
+PMCID: <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2245318">PMC2245318</a></p>
+</div>
+<div id="ref-1BbEovI1a">
+<p>2. <strong>Ggplot2: elegant graphics for data analysis</strong><br />
+Hadley Wickham<br />
+<em>Springer</em> (2009)<br />
+ISBN: <a href="https://worldcat.org/isbn/9780387981406">9780387981406</a></p>
+</div>
+<div id="ref-12dwNgm6Q">
+<p>3. <strong>partykit: A Modular Toolkit for Recursive Partytioning in R</strong><br />
+Torsten Hothorn, Achim Zeileis<br />
+<em>Journal of Machine Learning Research</em> (2015) <a href="http://jmlr.org/papers/v16/hothorn15a.html">http://jmlr.org/papers/v16/hothorn15a.html</a></p>
+</div>
+<div id="ref-BTBYOSXq">
+<p>4. <strong>martin-borkovec/ggparty</strong><br />
+Martin Borkovec<br />
+(2020-04-25) <a href="https://github.com/martin-borkovec/ggparty">https://github.com/martin-borkovec/ggparty</a></p>
+</div>
 </div>
 <!-- default theme -->
 
