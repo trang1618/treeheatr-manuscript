@@ -4,7 +4,7 @@ author-meta:
 - Jason H. Moore
 bibliography:
 - content/manual-references.json
-date-meta: '2020-04-26'
+date-meta: '2020-04-29'
 header-includes: '<!--
 
   Manubot generated metadata rendered from header-includes-template.html.
@@ -23,9 +23,9 @@ header-includes: '<!--
 
   <meta property="twitter:title" content="treeheatr: an R package for interpretable decision tree visualizations" />
 
-  <meta name="dc.date" content="2020-04-26" />
+  <meta name="dc.date" content="2020-04-29" />
 
-  <meta name="citation_publication_date" content="2020-04-26" />
+  <meta name="citation_publication_date" content="2020-04-29" />
 
   <meta name="dc.language" content="en-US" />
 
@@ -67,11 +67,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://trang1618.github.io/treeheatr-manuscript/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/c258eb67507010022f560658148e3811a16d983f/" />
+  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/b3e869a2fc6fb2739da0c005d5c05922404bae0d/" />
 
-  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/c258eb67507010022f560658148e3811a16d983f/" />
+  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/b3e869a2fc6fb2739da0c005d5c05922404bae0d/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/c258eb67507010022f560658148e3811a16d983f/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/b3e869a2fc6fb2739da0c005d5c05922404bae0d/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -105,10 +105,10 @@ title: 'treeheatr: an R package for interpretable decision tree visualizations'
 
 <small><em>
 This manuscript
-([permalink](https://trang1618.github.io/treeheatr-manuscript/v/c258eb67507010022f560658148e3811a16d983f/))
+([permalink](https://trang1618.github.io/treeheatr-manuscript/v/b3e869a2fc6fb2739da0c005d5c05922404bae0d/))
 was automatically generated
-from [trang1618/treeheatr-manuscript@c258eb6](https://github.com/trang1618/treeheatr-manuscript/tree/c258eb67507010022f560658148e3811a16d983f)
-on April 26, 2020.
+from [trang1618/treeheatr-manuscript@b3e869a](https://github.com/trang1618/treeheatr-manuscript/tree/b3e869a2fc6fb2739da0c005d5c05922404bae0d)
+on April 29, 2020.
 </em></small>
 
 ## Authors
@@ -142,7 +142,12 @@ on April 26, 2020.
 
 ## Abstract {.page_break_before}
 
+### Summary
+*treeheatr* is an R package for easily creating decision tree visualizations with the data represented as heatmaps at the tree's terminal nodes.
 
+### Availability and Implementation
+The *treeheatr* package is freely available under the permissive MIT license at https://trang1618.github.io/treeheatr.
+It comes with a detailed vignette that is automatically built with continuous integration.
 
 
 ## References {.page_break_before}
