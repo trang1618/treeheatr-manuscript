@@ -10,6 +10,5 @@ heat_tree(
   label_map = c(`0` = 'Negative', `1` = 'Positive'),
   target_cols = NULL
 ) %>% 
-  ggsave(filename = 'diabetes.png', .,
+  ggsave(filename = '../content/images/diabetes.png', .,
          height = 3.5, width = 7)
- 
