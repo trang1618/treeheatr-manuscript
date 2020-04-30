@@ -67,11 +67,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://trang1618.github.io/treeheatr-manuscript/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/d85153eff1f345f68916c4990b7226e92692cb47/" />
+  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/929d099ea0664f46318a2372e007b392b3296ec6/" />
 
-  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/d85153eff1f345f68916c4990b7226e92692cb47/" />
+  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/929d099ea0664f46318a2372e007b392b3296ec6/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/d85153eff1f345f68916c4990b7226e92692cb47/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/929d099ea0664f46318a2372e007b392b3296ec6/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -105,9 +105,9 @@ title: 'treeheatr: an R package for interpretable decision tree visualizations'
 
 <small><em>
 This manuscript
-([permalink](https://trang1618.github.io/treeheatr-manuscript/v/d85153eff1f345f68916c4990b7226e92692cb47/))
+([permalink](https://trang1618.github.io/treeheatr-manuscript/v/929d099ea0664f46318a2372e007b392b3296ec6/))
 was automatically generated
-from [trang1618/treeheatr-manuscript@d85153e](https://github.com/trang1618/treeheatr-manuscript/tree/d85153eff1f345f68916c4990b7226e92692cb47)
+from [trang1618/treeheatr-manuscript@929d099](https://github.com/trang1618/treeheatr-manuscript/tree/929d099ea0664f46318a2372e007b392b3296ec6)
 on April 30, 2020.
 </em></small>
 
@@ -173,38 +173,12 @@ heat_tree(data, task = 'classification', target_lab = 'Outcome')
 This one line of code above will generate the conditional inference tree, perform clustering, and produce a *ggplot* object that can be viewed in RStudio's viewer pane, saved to a graphic file, or embedded in an RMarkdown document.
 This example assumes a classification problem, but one can also apply *treeheatr* on a regression problem by changing the `task` argument.
 
-This article is organized as follows. 
-In Section 2, we describe the important functions and corresponding arguments in *treeheatr*.
+This article is organized as follows.
+In Section 2, we show an example *treeheatr* application by employing its functions on a real-world clinical dataset from a study of diabetes mellitus in a high risk population of Pima Indians [@pmcid:PMC2245318].
+In Section 3, we describe in details the important functions and corresponding arguments in *treeheatr*.
 We demonstrate the flexibility the user has in tweaking these arguments to enhance understanding of the tree-based models applied on their dataset.
-In Section 3, we apply the *treeheatr* package to a real-world clinical dataset from a study of diabetes mellitus in a high risk population of Pima Indians [@pmcid:PMC2245318].
-[Finally, we discuss general guidelines for creating effective decision tree-heatmap visualization.]
+Finally, we discuss general guidelines for creating effective decision tree-heatmap visualization.
 
-
-
-## Methods
-
-We utilize the *ggparty* R package to compute the conditional inference tree (indirectly via the *partykit* R package) and edge and node information.
-However, because *ggparty* assumes fixed terminal widths, we recompute the node layout to accommodate the different number of samples shown in the heatmap at each terminal node.
-We implemented a node layout structure that can generalize as the trees grow in size.
-This new layout weighs the *x*-coordinate of the parent node according to the level of the child nodes in order to avoid crossing of tree branches.
-This relative weight can be adjusted with the lev_fac parameter in `heat_tree()`.
-`lev_fac = 1` sets the parent node's *x*-coordinate perfectly in the middle of those of its child nodes.
-The default `lev_fac = 1.3` seems to provide aesthetically pleasing trees independent of the tree size (see [vignette](https://trang1618.github.io/treeheatr/articles/explore.html)).
-
-As default, *treeheatr* automatically performs clustering when organizing the heatmap.
-To order the features, clustering is run on the two groups of features, continuous and categorical, across all samples (including the outcome label, unless `clust_target = FALSE`).
-To order the samples, clustering is run on samples within each terminal node of all features. 
-*treeheatr* uses [`cluster::daisy()`](https://cran.r-project.org/web/packages/cluster/) with the Gower metric [@doi:10.2307/2528823] to incorporate both continuous and nominal categorical feature types. 
-
-In a visualization, it is difficult to find the balance between enhancing understanding and overloading information.
-We left it for the user to decide what type of information they want to show at inner nodes via different *geom* objects in the *ggparty* package.
-We believe displaying a heatmap at the terminal node space 
-
-This visualization nicely complements the current techniques of visualizing decision trees.
-Node purity, a metric measuring the tree's performance, can be visualized from the distribution of true outcome label at each terminal node in the first row.
-Comparing these values with the terminal node label gives a visual estimate of how accurate the tree predictions are.
-Without specifically choose two features to show in a 2-D scatter plot, we can infer correlation structures among features in the heatmap.
-The additional clustering also helps with the interpretation of the [...]
 
 
 ## A simple example
@@ -226,6 +200,36 @@ heat_tree(
 The `heat_tree()` function takes a data frame, a character string indicating the column name associated with the outcome/phenotype (e.g., Diabetes status) and other optional arguments such as the mapping of the outcome label. 
 
 ![A decision tree-heatmap for predicting whether an individual has diabetes.](images/diabetes.png){#fig:example}
+
+## Methods
+
+We utilize the *ggparty* R package to compute the conditional inference tree (indirectly via the *partykit* R package) and edge and node information.
+However, because *ggparty* assumes fixed terminal widths, we recompute the node layout to accommodate the different number of samples shown in the heatmap at each terminal node.
+We implemented a node layout structure that can generalize as the trees grow in size.
+This new layout weighs the *x*-coordinate of the parent node according to the level of the child nodes in order to avoid crossing of tree branches.
+This relative weight can be adjusted with the lev_fac parameter in `heat_tree()`.
+`lev_fac = 1` sets the parent node's *x*-coordinate perfectly in the middle of those of its child nodes.
+The default `lev_fac = 1.3` seems to provide aesthetically pleasing trees independent of the tree size (see [vignette](https://trang1618.github.io/treeheatr/articles/explore.html)).
+The user can define customized layout for specific nodes and combine it with the automatic layout for the other nodes.
+
+As default, *treeheatr* automatically performs clustering when organizing the heatmap.
+To order the features, clustering is run on the two groups of features, continuous and categorical, across all samples (including the outcome label, unless `clust_target = FALSE`).
+To order the samples, clustering is run on samples within each terminal node of all features. 
+*treeheatr* uses the `daisy()` function in the [*cluster*](https://cran.r-project.org/web/packages/cluster/) R package with the Gower metric [@doi:10.2307/2528823] to compute dissimilarity in both continuous and nominal categorical feature types. 
+We note that, while there is no definitive guideline for proper weighting of features of different types, the goal of the clustering step is to improve our interpretability of the tree-based model and not to make precise inference about each cluster.
+Therefore, *treeheatr* does not draw dendrograms and allows for the inclusion of outcome labels in clustering the samples.
+
+In a visualization, it is difficult to find the balance between enhancing understanding and overloading information.
+We believe showing a heatmap at the terminal node space provides additional information of the data in an elegant way that is not overwhelming and may even simplify the model's interpretation. 
+We left it for the user to decide what type of information to be displayed at the inner nodes via different *geom* objects (e.g., `geom_node_plot`, `geom_edge_label`, etc.) in the *ggparty* package.
+For example, one may choose to show the [distribution](https://github.com/martin-borkovec/ggparty/wiki/1-Motivating-Example) of the features and how they split the samples at these decision nodes.
+
+The integration of heatmap nicely complements the current techniques of visualizing decision trees.
+Node purity, a metric measuring the tree's performance, can be visualized from the distribution of true outcome label at each terminal node in the first row.
+Comparing these values with the terminal node label gives a visual estimate of how accurate the tree predictions are.
+Further, without specifically choose two features to show in a 2-D scatter plot, we can infer correlation structures among features in the heatmap.
+The additional clustering may also reveal sub-structures within a leaf node.
+
 
 ## Conclusion
 
