@@ -4,7 +4,7 @@ author-meta:
 - Jason H. Moore
 bibliography:
 - content/manual-references.json
-date-meta: '2020-04-29'
+date-meta: '2020-04-30'
 header-includes: '<!--
 
   Manubot generated metadata rendered from header-includes-template.html.
@@ -23,9 +23,9 @@ header-includes: '<!--
 
   <meta property="twitter:title" content="treeheatr: an R package for interpretable decision tree visualizations" />
 
-  <meta name="dc.date" content="2020-04-29" />
+  <meta name="dc.date" content="2020-04-30" />
 
-  <meta name="citation_publication_date" content="2020-04-29" />
+  <meta name="citation_publication_date" content="2020-04-30" />
 
   <meta name="dc.language" content="en-US" />
 
@@ -67,11 +67,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://trang1618.github.io/treeheatr-manuscript/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/820d95e0fdb2d0ea8aca4740342f4bd484e46e88/" />
+  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/d85153eff1f345f68916c4990b7226e92692cb47/" />
 
-  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/820d95e0fdb2d0ea8aca4740342f4bd484e46e88/" />
+  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/d85153eff1f345f68916c4990b7226e92692cb47/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/820d95e0fdb2d0ea8aca4740342f4bd484e46e88/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/d85153eff1f345f68916c4990b7226e92692cb47/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -105,10 +105,10 @@ title: 'treeheatr: an R package for interpretable decision tree visualizations'
 
 <small><em>
 This manuscript
-([permalink](https://trang1618.github.io/treeheatr-manuscript/v/820d95e0fdb2d0ea8aca4740342f4bd484e46e88/))
+([permalink](https://trang1618.github.io/treeheatr-manuscript/v/d85153eff1f345f68916c4990b7226e92692cb47/))
 was automatically generated
-from [trang1618/treeheatr-manuscript@820d95e](https://github.com/trang1618/treeheatr-manuscript/tree/820d95e0fdb2d0ea8aca4740342f4bd484e46e88)
-on April 29, 2020.
+from [trang1618/treeheatr-manuscript@d85153e](https://github.com/trang1618/treeheatr-manuscript/tree/d85153eff1f345f68916c4990b7226e92692cb47)
+on April 30, 2020.
 </em></small>
 
 ## Authors
@@ -162,13 +162,16 @@ Tree-based algorithms such as random forests and gradient boosted trees are wide
 Visualizing and intepreting their building blocks, the single decision trees, are the first steps toward understanding these complex tree-based structures.
 However, it is difficult to incorporate the tree's predictive performance and the feature space in a single visualization.
 Existing softwares frequently treat all nodes in a decision tree similarly, leaving limited options for improving information presentation at the leaf nodes.
-For example, state-of-the-art libraries such as Python's [dtreeviz](https://github.com/parrt/dtreeviz), while producing aesthetic trees with detailed histograms at inner nodes, draw pie chart at leaf nodes.
+Specifically, state-of-the-art libraries such as Python's [dtreeviz](https://github.com/parrt/dtreeviz), while producing aesthetic trees with detailed histograms at inner nodes, draw pie chart at leaf nodes.
+The *ggparty* R package allows the user to have full control of the representation of each node but fixes the terminal node widths, which can limit the ability to show more collective visualizations.
 
-We have developed the *treeheatr* R package to utilize the leaf node space to show the data as a heatmap where the samples and features are optionally clustered to improve interpretation.
-Given a classification or regression problem, this example one line of code will generate the conditional inference tree, perform clustering, and produce a *ggplot* object that can be viewed in RStudio's viewer pane, saved to a graphic file, or embedded in an RMarkdown document:
+We have developed the *treeheatr* package to utilize the leaf node space to show the data as a heatmap where the samples and features are optionally clustered to improve interpretation.
+After simple installation, the user can apply *treeheatr* on their classification or regression problem with a single function, `heat_tree()`, as follows:
 ```
 heat_tree(data, task = 'classification', target_lab = 'Outcome')
 ```
+This one line of code above will generate the conditional inference tree, perform clustering, and produce a *ggplot* object that can be viewed in RStudio's viewer pane, saved to a graphic file, or embedded in an RMarkdown document.
+This example assumes a classification problem, but one can also apply *treeheatr* on a regression problem by changing the `task` argument.
 
 This article is organized as follows. 
 In Section 2, we describe the important functions and corresponding arguments in *treeheatr*.
@@ -178,14 +181,36 @@ In Section 3, we apply the *treeheatr* package to a real-world clinical dataset 
 
 
 
-## Materials and methods
+## Methods
+
+We utilize the *ggparty* R package to compute the conditional inference tree (indirectly via the *partykit* R package) and edge and node information.
+However, because *ggparty* assumes fixed terminal widths, we recompute the node layout to accommodate the different number of samples shown in the heatmap at each terminal node.
+We implemented a node layout structure that can generalize as the trees grow in size.
+This new layout weighs the *x*-coordinate of the parent node according to the level of the child nodes in order to avoid crossing of tree branches.
+This relative weight can be adjusted with the lev_fac parameter in `heat_tree()`.
+`lev_fac = 1` sets the parent node's *x*-coordinate perfectly in the middle of those of its child nodes.
+The default `lev_fac = 1.3` seems to provide aesthetically pleasing trees independent of the tree size (see [vignette](https://trang1618.github.io/treeheatr/articles/explore.html)).
+
+As default, *treeheatr* automatically performs clustering when organizing the heatmap.
+To order the features, clustering is run on the two groups of features, continuous and categorical, across all samples (including the outcome label, unless `clust_target = FALSE`).
+To order the samples, clustering is run on samples within each terminal node of all features. 
+*treeheatr* uses [`cluster::daisy()`](https://cran.r-project.org/web/packages/cluster/) with the Gower metric [@doi:10.2307/2528823] to incorporate both continuous and nominal categorical feature types. 
+
+In a visualization, it is difficult to find the balance between enhancing understanding and overloading information.
+We left it for the user to decide what type of information they want to show at inner nodes via different *geom* objects in the *ggparty* package.
+We believe displaying a heatmap at the terminal node space 
+
+This visualization nicely complements the current techniques of visualizing decision trees.
+Node purity, a metric measuring the tree's performance, can be visualized from the distribution of true outcome label at each terminal node in the first row.
+Comparing these values with the terminal node label gives a visual estimate of how accurate the tree predictions are.
+Without specifically choose two features to show in a 2-D scatter plot, we can infer correlation structures among features in the heatmap.
+The additional clustering also helps with the interpretation of the [...]
 
 
-
-## treeheatr: a simple example
+## A simple example
 
 This example visualizes the conditional inference tree model built to predict whether or not a patient has diabetes from a dataset provided by the National Institute of Diabetes and Digestive and Kidney Diseases [@pmcid:PMC2245318].
-This dataset of female patients at least 21 years old of Pima Indian heritage near Phoenix, Arizona was downloaded from [Kaggle](https://www.kaggle.com/uciml/pima-indians-diabetes-database) and has eight features: age, number of times pregnant, plasma glucose concentration, diastolic blood pressure, skin fold thickness, 2-hour serum insulin, body mass index and diabetes pedigree function.
+This dataset of female patients at least 21 years old of Pima Indian heritage near Phoenix, Arizona was downloaded from [Kaggle](https://www.kaggle.com/uciml/pima-indians-diabetes-database) and has eight features: age, number of pregnancies, plasma glucose concentration, diastolic blood pressure, skin fold thickness, 2-hour serum insulin, body mass index and diabetes pedigree function.
 Detailed descriptions of these variables and data source can be found on the Kaggle page.
 
 The following lines of code computes and visualizes the conditional decision tree along with the heatmap containing features that are important for building this model (Fig. @fig:example):
@@ -198,12 +223,9 @@ heat_tree(
 )
 ```
 
-The heat_tree() function takes a data frame, a character string indicating the column name associated with the outcome/phenotype (e.g., Diabetes status) and other optional arguments such as the mapping of the outcome label. 
+The `heat_tree()` function takes a data frame, a character string indicating the column name associated with the outcome/phenotype (e.g., Diabetes status) and other optional arguments such as the mapping of the outcome label. 
 
 ![A decision tree-heatmap for predicting whether an individual has diabetes.](images/diabetes.png){#fig:example}
-
-
-
 
 ## Conclusion
 
@@ -217,7 +239,7 @@ Future works on *treeheatr* include enhancements such as supporting heatmap visu
 ## Acknowledgements
 
 The *treeheatr* package was made possible by leveraging integral R packages including *ggplot2* [@isbn:978-0387981406], *partykit* [@url:http://jmlr.org/papers/v16/hothorn15a.html], *ggparty* [@url:https://github.com/martin-borkovec/ggparty] and many others.
-We would also like to thank Daniel Himmelstein for his helpful comments on the continuous integration configuration.
+We would also like to thank Daniel Himmelstein for his helpful comments on the package's continuous integration configuration.
 
 ## References {.page_break_before}
 
