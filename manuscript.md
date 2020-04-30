@@ -67,11 +67,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://trang1618.github.io/treeheatr-manuscript/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/929d099ea0664f46318a2372e007b392b3296ec6/" />
+  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/a351f488609907087d9decf7dff7c4fc46c6789b/" />
 
-  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/929d099ea0664f46318a2372e007b392b3296ec6/" />
+  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/a351f488609907087d9decf7dff7c4fc46c6789b/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/929d099ea0664f46318a2372e007b392b3296ec6/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/a351f488609907087d9decf7dff7c4fc46c6789b/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -105,9 +105,9 @@ title: 'treeheatr: an R package for interpretable decision tree visualizations'
 
 <small><em>
 This manuscript
-([permalink](https://trang1618.github.io/treeheatr-manuscript/v/929d099ea0664f46318a2372e007b392b3296ec6/))
+([permalink](https://trang1618.github.io/treeheatr-manuscript/v/a351f488609907087d9decf7dff7c4fc46c6789b/))
 was automatically generated
-from [trang1618/treeheatr-manuscript@929d099](https://github.com/trang1618/treeheatr-manuscript/tree/929d099ea0664f46318a2372e007b392b3296ec6)
+from [trang1618/treeheatr-manuscript@a351f48](https://github.com/trang1618/treeheatr-manuscript/tree/a351f488609907087d9decf7dff7c4fc46c6789b)
 on April 30, 2020.
 </em></small>
 
@@ -184,7 +184,7 @@ Finally, we discuss general guidelines for creating effective decision tree-heat
 ## A simple example
 
 This example visualizes the conditional inference tree model built to predict whether or not a patient has diabetes from a dataset provided by the National Institute of Diabetes and Digestive and Kidney Diseases [@pmcid:PMC2245318].
-This dataset of female patients at least 21 years old of Pima Indian heritage near Phoenix, Arizona was downloaded from [Kaggle](https://www.kaggle.com/uciml/pima-indians-diabetes-database) and has eight features: age, number of pregnancies, plasma glucose concentration, diastolic blood pressure, skin fold thickness, 2-hour serum insulin, body mass index and diabetes pedigree function.
+This dataset of 768 female patients at least 21 years old of Pima Indian heritage near Phoenix, Arizona was downloaded from [Kaggle](https://www.kaggle.com/uciml/pima-indians-diabetes-database) and has eight features: age, number of pregnancies, plasma glucose concentration, diastolic blood pressure, skin fold thickness, 2-hour serum insulin, body mass index (BMI) and diabetes pedigree function.
 Detailed descriptions of these variables and data source can be found on the Kaggle page.
 
 The following lines of code computes and visualizes the conditional decision tree along with the heatmap containing features that are important for building this model (Fig. @fig:example):
@@ -200,6 +200,12 @@ heat_tree(
 The `heat_tree()` function takes a data frame, a character string indicating the column name associated with the outcome/phenotype (e.g., Diabetes status) and other optional arguments such as the mapping of the outcome label. 
 
 ![A decision tree-heatmap for predicting whether an individual has diabetes.](images/diabetes.png){#fig:example}
+
+In this example, we observe that glucose level is the first determining factors in predicting diabetes status.
+When this value is above 127 but not larger than 154 (observations with light green glucose value), BMI helps further distinguish the group with diabetes from the other.
+On the left branches, while these samples are predicted to not have diabetes by majority voting, the leaf nodes have different purity.
+These seemingly non-beneficial splits present an opportunity to teach machine learning novices the different measures of node impurity such as the Gini index or cross-entropy [@isbn:978-0387848570].
+General patterns in the heatmap for this example can be difficult to parse because of the large number of observations, but we can still observe similar color patterns between age and the number of pregnancies indicating a correlation between these two features, which is expected.
 
 ## Methods
 
@@ -223,6 +229,13 @@ In a visualization, it is difficult to find the balance between enhancing unders
 We believe showing a heatmap at the terminal node space provides additional information of the data in an elegant way that is not overwhelming and may even simplify the model's interpretation. 
 We left it for the user to decide what type of information to be displayed at the inner nodes via different *geom* objects (e.g., `geom_node_plot`, `geom_edge_label`, etc.) in the *ggparty* package.
 For example, one may choose to show the [distribution](https://github.com/martin-borkovec/ggparty/wiki/1-Motivating-Example) of the features and how they split the samples at these decision nodes.
+
+Striving for simplicity, *treeheatr* utilizes direct labeling to avoid unnecessary legends.
+For example, in classification, the leaf node labels have colors corresponding with different classes, e.g., purple for Negative and yellow for Positive diabetes status (Fig. @fig:example).
+As for feature values, the color scale legends may be misleading because these features may have been rescaled or normalized.
+As defaults, lighter colors are associated with higher values.
+This information can also be acquired from examining the edge labels.
+Specifically, in Fig. @fig:example, high glucose values (larger than 154 on the rightmost branch) can be easily mapped to samples with light yellow color in the last row.
 
 The integration of heatmap nicely complements the current techniques of visualizing decision trees.
 Node purity, a metric measuring the tree's performance, can be visualized from the distribution of true outcome label at each terminal node in the first row.
