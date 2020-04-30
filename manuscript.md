@@ -67,11 +67,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://trang1618.github.io/treeheatr-manuscript/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/a351f488609907087d9decf7dff7c4fc46c6789b/" />
+  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/519c59047961279d91e765a32612fd850f780882/" />
 
-  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/a351f488609907087d9decf7dff7c4fc46c6789b/" />
+  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/519c59047961279d91e765a32612fd850f780882/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/a351f488609907087d9decf7dff7c4fc46c6789b/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/519c59047961279d91e765a32612fd850f780882/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -105,9 +105,9 @@ title: 'treeheatr: an R package for interpretable decision tree visualizations'
 
 <small><em>
 This manuscript
-([permalink](https://trang1618.github.io/treeheatr-manuscript/v/a351f488609907087d9decf7dff7c4fc46c6789b/))
+([permalink](https://trang1618.github.io/treeheatr-manuscript/v/519c59047961279d91e765a32612fd850f780882/))
 was automatically generated
-from [trang1618/treeheatr-manuscript@a351f48](https://github.com/trang1618/treeheatr-manuscript/tree/a351f488609907087d9decf7dff7c4fc46c6789b)
+from [trang1618/treeheatr-manuscript@519c590](https://github.com/trang1618/treeheatr-manuscript/tree/519c59047961279d91e765a32612fd850f780882)
 on April 30, 2020.
 </em></small>
 
@@ -155,6 +155,7 @@ It comes with a detailed vignette that is automatically built with continuous in
 <ttle@pennmedicine.upenn.edu>
 
 ### Supplementary information
+[Supplementary data](https://trang1618.github.io/treeheatr) are available at Bioinformatics online.
 
 ## Introduction
 
