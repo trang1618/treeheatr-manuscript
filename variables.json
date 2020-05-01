@@ -9,12 +9,12 @@
       "interpretability"
     ],
     "lang": "en-US",
-    "date-meta": "2020-04-30",
+    "date-meta": "2020-05-01",
     "author-meta": [
       "Trang T. Le",
       "Jason H. Moore"
     ],
-    "header-includes": "<!--\nManubot generated metadata rendered from header-includes-template.html.\nSuggest improvements at https://github.com/manubot/manubot/blob/master/manubot/process/header-includes-template.html\n-->\n<meta name=\"dc.format\" content=\"text/html\" />\n<meta name=\"dc.title\" content=\"treeheatr: an R package for interpretable decision tree visualizations\" />\n<meta name=\"citation_title\" content=\"treeheatr: an R package for interpretable decision tree visualizations\" />\n<meta property=\"og:title\" content=\"treeheatr: an R package for interpretable decision tree visualizations\" />\n<meta property=\"twitter:title\" content=\"treeheatr: an R package for interpretable decision tree visualizations\" />\n<meta name=\"dc.date\" content=\"2020-04-30\" />\n<meta name=\"citation_publication_date\" content=\"2020-04-30\" />\n<meta name=\"dc.language\" content=\"en-US\" />\n<meta name=\"citation_language\" content=\"en-US\" />\n<meta name=\"dc.relation.ispartof\" content=\"Manubot\" />\n<meta name=\"dc.publisher\" content=\"Manubot\" />\n<meta name=\"citation_journal_title\" content=\"Manubot\" />\n<meta name=\"citation_technical_report_institution\" content=\"Manubot\" />\n<meta name=\"citation_author\" content=\"Trang T. Le\" />\n<meta name=\"citation_author_institution\" content=\"Department of Biostatistics, Epidemiology and Informatics, Institute for Biomedical Informatics, University of Pennsylvania, Philadelphia, PA 19104\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0003-3737-6565\" />\n<meta name=\"twitter:creator\" content=\"@trang1618\" />\n<meta name=\"citation_author\" content=\"Jason H. Moore\" />\n<meta name=\"citation_author_institution\" content=\"Department of Biostatistics, Epidemiology and Informatics, Institute for Biomedical Informatics, University of Pennsylvania, Philadelphia, PA 19104\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0002-5015-1099\" />\n<meta name=\"twitter:creator\" content=\"@moorejh\" />\n<link rel=\"canonical\" href=\"https://trang1618.github.io/treeheatr-manuscript/\" />\n<meta property=\"og:url\" content=\"https://trang1618.github.io/treeheatr-manuscript/\" />\n<meta property=\"twitter:url\" content=\"https://trang1618.github.io/treeheatr-manuscript/\" />\n<meta name=\"citation_fulltext_html_url\" content=\"https://trang1618.github.io/treeheatr-manuscript/\" />\n<meta name=\"citation_pdf_url\" content=\"https://trang1618.github.io/treeheatr-manuscript/manuscript.pdf\" />\n<link rel=\"alternate\" type=\"application/pdf\" href=\"https://trang1618.github.io/treeheatr-manuscript/manuscript.pdf\" />\n<link rel=\"alternate\" type=\"text/html\" href=\"https://trang1618.github.io/treeheatr-manuscript/v/519c59047961279d91e765a32612fd850f780882/\" />\n<meta name=\"manubot_html_url_versioned\" content=\"https://trang1618.github.io/treeheatr-manuscript/v/519c59047961279d91e765a32612fd850f780882/\" />\n<meta name=\"manubot_pdf_url_versioned\" content=\"https://trang1618.github.io/treeheatr-manuscript/v/519c59047961279d91e765a32612fd850f780882/manuscript.pdf\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"twitter:card\" content=\"summary_large_image\" />\n<link rel=\"icon\" type=\"image/png\" sizes=\"192x192\" href=\"https://manubot.org/favicon-192x192.png\" />\n<link rel=\"mask-icon\" href=\"https://manubot.org/safari-pinned-tab.svg\" color=\"#ad1457\" />\n<meta name=\"theme-color\" content=\"#ad1457\" />\n<!-- end Manubot generated metadata -->",
+    "header-includes": "<!--\nManubot generated metadata rendered from header-includes-template.html.\nSuggest improvements at https://github.com/manubot/manubot/blob/master/manubot/process/header-includes-template.html\n-->\n<meta name=\"dc.format\" content=\"text/html\" />\n<meta name=\"dc.title\" content=\"treeheatr: an R package for interpretable decision tree visualizations\" />\n<meta name=\"citation_title\" content=\"treeheatr: an R package for interpretable decision tree visualizations\" />\n<meta property=\"og:title\" content=\"treeheatr: an R package for interpretable decision tree visualizations\" />\n<meta property=\"twitter:title\" content=\"treeheatr: an R package for interpretable decision tree visualizations\" />\n<meta name=\"dc.date\" content=\"2020-05-01\" />\n<meta name=\"citation_publication_date\" content=\"2020-05-01\" />\n<meta name=\"dc.language\" content=\"en-US\" />\n<meta name=\"citation_language\" content=\"en-US\" />\n<meta name=\"dc.relation.ispartof\" content=\"Manubot\" />\n<meta name=\"dc.publisher\" content=\"Manubot\" />\n<meta name=\"citation_journal_title\" content=\"Manubot\" />\n<meta name=\"citation_technical_report_institution\" content=\"Manubot\" />\n<meta name=\"citation_author\" content=\"Trang T. Le\" />\n<meta name=\"citation_author_institution\" content=\"Department of Biostatistics, Epidemiology and Informatics, Institute for Biomedical Informatics, University of Pennsylvania, Philadelphia, PA 19104\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0003-3737-6565\" />\n<meta name=\"twitter:creator\" content=\"@trang1618\" />\n<meta name=\"citation_author\" content=\"Jason H. Moore\" />\n<meta name=\"citation_author_institution\" content=\"Department of Biostatistics, Epidemiology and Informatics, Institute for Biomedical Informatics, University of Pennsylvania, Philadelphia, PA 19104\" />\n<meta name=\"citation_author_orcid\" content=\"0000-0002-5015-1099\" />\n<meta name=\"twitter:creator\" content=\"@moorejh\" />\n<link rel=\"canonical\" href=\"https://trang1618.github.io/treeheatr-manuscript/\" />\n<meta property=\"og:url\" content=\"https://trang1618.github.io/treeheatr-manuscript/\" />\n<meta property=\"twitter:url\" content=\"https://trang1618.github.io/treeheatr-manuscript/\" />\n<meta name=\"citation_fulltext_html_url\" content=\"https://trang1618.github.io/treeheatr-manuscript/\" />\n<meta name=\"citation_pdf_url\" content=\"https://trang1618.github.io/treeheatr-manuscript/manuscript.pdf\" />\n<link rel=\"alternate\" type=\"application/pdf\" href=\"https://trang1618.github.io/treeheatr-manuscript/manuscript.pdf\" />\n<link rel=\"alternate\" type=\"text/html\" href=\"https://trang1618.github.io/treeheatr-manuscript/v/bcf31690299783319364838f7b190914965876fd/\" />\n<meta name=\"manubot_html_url_versioned\" content=\"https://trang1618.github.io/treeheatr-manuscript/v/bcf31690299783319364838f7b190914965876fd/\" />\n<meta name=\"manubot_pdf_url_versioned\" content=\"https://trang1618.github.io/treeheatr-manuscript/v/bcf31690299783319364838f7b190914965876fd/manuscript.pdf\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"twitter:card\" content=\"summary_large_image\" />\n<link rel=\"icon\" type=\"image/png\" sizes=\"192x192\" href=\"https://manubot.org/favicon-192x192.png\" />\n<link rel=\"mask-icon\" href=\"https://manubot.org/safari-pinned-tab.svg\" color=\"#ad1457\" />\n<meta name=\"theme-color\" content=\"#ad1457\" />\n<!-- end Manubot generated metadata -->",
     "bibliography": [
       "content/manual-references.json"
     ],
@@ -24,7 +24,7 @@
     "manubot-clear-requests-cache": false
   },
   "manubot": {
-    "date": "April 30, 2020",
+    "date": "May 1, 2020",
     "authors": [
       {
         "github": "trang1618",
@@ -70,19 +70,19 @@
       "repo_slug": "trang1618/treeheatr-manuscript",
       "repo_owner": "trang1618",
       "repo_name": "treeheatr-manuscript",
-      "commit": "519c59047961279d91e765a32612fd850f780882",
-      "triggering_commit": "519c59047961279d91e765a32612fd850f780882",
-      "build_url": "https://github.com/trang1618/treeheatr-manuscript/commit/519c59047961279d91e765a32612fd850f780882/checks",
+      "commit": "bcf31690299783319364838f7b190914965876fd",
+      "triggering_commit": "bcf31690299783319364838f7b190914965876fd",
+      "build_url": "https://github.com/trang1618/treeheatr-manuscript/commit/bcf31690299783319364838f7b190914965876fd/checks",
       "job_url": "https://github.com/trang1618/treeheatr-manuscript/runs/run2"
     },
     "html_url": "https://trang1618.github.io/treeheatr-manuscript/",
     "pdf_url": "https://trang1618.github.io/treeheatr-manuscript/manuscript.pdf",
-    "html_url_versioned": "https://trang1618.github.io/treeheatr-manuscript/v/519c59047961279d91e765a32612fd850f780882/",
-    "pdf_url_versioned": "https://trang1618.github.io/treeheatr-manuscript/v/519c59047961279d91e765a32612fd850f780882/manuscript.pdf",
+    "html_url_versioned": "https://trang1618.github.io/treeheatr-manuscript/v/bcf31690299783319364838f7b190914965876fd/",
+    "pdf_url_versioned": "https://trang1618.github.io/treeheatr-manuscript/v/bcf31690299783319364838f7b190914965876fd/manuscript.pdf",
     "manubot_version": "0.3.1",
     "rootstock_commit": "073ce0e4e81c82e1ce8c55caeab0ebc6fd0f840c",
     "manuscript_stats": {
-      "word_count": 1772
+      "word_count": 1840
     }
   }
 }
