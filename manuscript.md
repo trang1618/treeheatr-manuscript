@@ -67,11 +67,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://trang1618.github.io/treeheatr-manuscript/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/bcf31690299783319364838f7b190914965876fd/" />
+  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/4132845c16a417e56f1abb79a90861d234d1440c/" />
 
-  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/bcf31690299783319364838f7b190914965876fd/" />
+  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/4132845c16a417e56f1abb79a90861d234d1440c/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/bcf31690299783319364838f7b190914965876fd/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/4132845c16a417e56f1abb79a90861d234d1440c/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -105,9 +105,9 @@ title: 'treeheatr: an R package for interpretable decision tree visualizations'
 
 <small><em>
 This manuscript
-([permalink](https://trang1618.github.io/treeheatr-manuscript/v/bcf31690299783319364838f7b190914965876fd/))
+([permalink](https://trang1618.github.io/treeheatr-manuscript/v/4132845c16a417e56f1abb79a90861d234d1440c/))
 was automatically generated
-from [trang1618/treeheatr-manuscript@bcf3169](https://github.com/trang1618/treeheatr-manuscript/tree/bcf31690299783319364838f7b190914965876fd)
+from [trang1618/treeheatr-manuscript@4132845](https://github.com/trang1618/treeheatr-manuscript/tree/4132845c16a417e56f1abb79a90861d234d1440c)
 on May 1, 2020.
 </em></small>
 
@@ -206,7 +206,7 @@ In this example, we observe that glucose level is the first determining factors 
 When this value is above 127 but not larger than 154 (observations with light green glucose value), BMI helps further distinguish the group with diabetes from the other.
 On the left branches, while these samples are predicted to not have diabetes by majority voting, the leaf nodes have different purity.
 These seemingly non-beneficial splits present an opportunity to teach machine learning novices the different measures of node impurity such as the Gini index or cross-entropy [@isbn:978-0387848570].
-General patterns in the heatmap for this example can be difficult to parse because of the large number of observations, but we can still observe similar color patterns between age and the number of pregnancies indicating a correlation between these two features, which is expected.
+General patterns in the heatmap for this example are admittedly difficult to parse because of the large number of observations, but we can still observe similar color patterns between age and the number of pregnancies indicating a correlation between these two features, which is expected.
 
 ## Methods
 
@@ -223,7 +223,7 @@ The default `lev_fac = 1.3` seems to provide aesthetically pleasing trees indepe
 The user can define a customized layout for a specific set of nodes and combine that layout with the automatic layout for the other nodes.
 
 As default, *treeheatr* automatically performs clustering when organizing the heatmap.
-To order the features, clustering is run on the two groups of features, continuous and categorical, across all samples (including the outcome label, unless `clust_target = FALSE`).
+To order the features, clustering is run separately on the two groups of features, continuous and categorical, across all samples (including the outcome label, unless `clust_target = FALSE`).
 To order the samples, clustering is run on samples within each terminal node of all features. 
 *treeheatr* uses the `daisy()` function in the [*cluster*](https://cran.r-project.org/web/packages/cluster/) R package with the Gower metric [@doi:10.2307/2528823] to compute dissimilarity in both continuous and nominal categorical feature types. 
 We note that, while there is no definitive guideline for proper weighting of features of different types, the goal of the clustering step is to improve our interpretability of the tree-based model and not to make precise inference about each cluster.
@@ -252,11 +252,12 @@ The additional clustering may also reveal sub-structures within a leaf node.
 ## Conclusion
 
 In this paper, we presented the new type of integrated visualization of decision trees and heatmaps, which provides a comprehensive data overview as well as model interpretation.
-We demonstrated that [...]
-The visualization is implemented in an easily installed package with a detailed vignette.
-Released as open source software, {treeheatr} hopes to receive contribution from other developers.
+We demonstrated that this integration uncovers meaningful patterns among the predictive features and highlights the important elements of conditional trees including feature splits and several leaf node characteristics such as prediction value, impurity and number of leaf samples.
+Implemented in an easily installed package with a detailed vignette, {treeheatr} can be a useful teaching tool to enhance students' understanding of this fundamental model before diving into more complex tree-based machine learning methods.
+This package has been released as open source software expected to receive contribution from other developers.
 
 Future works on *treeheatr* include enhancements such as supporting heatmap visualization of a holdout set and highlighting the tree branches that point to a specific holdout sample.
+Simple data preprocess beyond scaling and normalizing the column may be beneficial for handling outliers and missing data points and thus constructing more robust models and more informative visualizations.
 
 ## Acknowledgements
 
