@@ -1,7 +1,7 @@
 # Output directory containing the formatted manuscript
 
 The [`gh-pages`](https://github.com/trang1618/treeheatr-manuscript/tree/gh-pages) branch hosts the contents of this directory at <https://trang1618.github.io/treeheatr-manuscript/>.
-The permalink for this webpage version is <https://trang1618.github.io/treeheatr-manuscript/v/4132845c16a417e56f1abb79a90861d234d1440c/>.
+The permalink for this webpage version is <https://trang1618.github.io/treeheatr-manuscript/v/0af8f5f4046dab8ba70610f2f355c4ad0aacf25e/>.
 To redirect to the permalink for the latest manuscript version at anytime, use the link <https://trang1618.github.io/treeheatr-manuscript/v/freeze/>.
 
 ## Files
@@ -35,4 +35,4 @@ Verifying timestamps with the `ots verify` command requires running a local bitc
 ## Source
 
 The manuscripts in this directory were built from
-[`4132845c16a417e56f1abb79a90861d234d1440c`](https://github.com/trang1618/treeheatr-manuscript/commit/4132845c16a417e56f1abb79a90861d234d1440c).
+[`0af8f5f4046dab8ba70610f2f355c4ad0aacf25e`](https://github.com/trang1618/treeheatr-manuscript/commit/0af8f5f4046dab8ba70610f2f355c4ad0aacf25e).
