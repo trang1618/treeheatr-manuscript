@@ -4,7 +4,7 @@ author-meta:
 - Jason H. Moore
 bibliography:
 - content/manual-references.json
-date-meta: '2020-05-01'
+date-meta: '2020-05-02'
 header-includes: '<!--
 
   Manubot generated metadata rendered from header-includes-template.html.
@@ -23,9 +23,9 @@ header-includes: '<!--
 
   <meta property="twitter:title" content="treeheatr: an R package for interpretable decision tree visualizations" />
 
-  <meta name="dc.date" content="2020-05-01" />
+  <meta name="dc.date" content="2020-05-02" />
 
-  <meta name="citation_publication_date" content="2020-05-01" />
+  <meta name="citation_publication_date" content="2020-05-02" />
 
   <meta name="dc.language" content="en-US" />
 
@@ -67,11 +67,11 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://trang1618.github.io/treeheatr-manuscript/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/4132845c16a417e56f1abb79a90861d234d1440c/" />
+  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/0af8f5f4046dab8ba70610f2f355c4ad0aacf25e/" />
 
-  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/4132845c16a417e56f1abb79a90861d234d1440c/" />
+  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/0af8f5f4046dab8ba70610f2f355c4ad0aacf25e/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/4132845c16a417e56f1abb79a90861d234d1440c/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/0af8f5f4046dab8ba70610f2f355c4ad0aacf25e/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
@@ -105,10 +105,10 @@ title: 'treeheatr: an R package for interpretable decision tree visualizations'
 
 <small><em>
 This manuscript
-([permalink](https://trang1618.github.io/treeheatr-manuscript/v/4132845c16a417e56f1abb79a90861d234d1440c/))
+([permalink](https://trang1618.github.io/treeheatr-manuscript/v/0af8f5f4046dab8ba70610f2f355c4ad0aacf25e/))
 was automatically generated
-from [trang1618/treeheatr-manuscript@4132845](https://github.com/trang1618/treeheatr-manuscript/tree/4132845c16a417e56f1abb79a90861d234d1440c)
-on May 1, 2020.
+from [trang1618/treeheatr-manuscript@0af8f5f](https://github.com/trang1618/treeheatr-manuscript/tree/0af8f5f4046dab8ba70610f2f355c4ad0aacf25e)
+on May 2, 2020.
 </em></small>
 
 ## Authors
@@ -168,7 +168,7 @@ The *ggparty* R package allows the user to have full control of the representati
 
 We have developed the *treeheatr* package to utilize the leaf node space to show the data as a heatmap where the samples and features are optionally clustered to improve interpretation.
 After simple installation, the user can apply *treeheatr* on their classification or regression problem with a single function:
-```
+```r
 heat_tree(data, task = 'classification', target_lab = 'Outcome')
 ```
 This one line of code above will generate the conditional inference tree, perform clustering, and produce a decision tree-heatmap as a *ggplot* object that can be viewed in RStudio's viewer pane, saved to a graphic file, or embedded in an RMarkdown document.
@@ -190,7 +190,7 @@ Detailed descriptions of these variables and data source can be found on the Kag
 
 The following lines of code computes and visualizes the conditional decision tree along with the heatmap containing features that are important for building this model (Fig. @fig:example):
 
-```
+```r
 heat_tree(
   data = diabetes,
   target_lab = 'Diabetes status',

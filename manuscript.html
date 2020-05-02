@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Trang T. Le" />
   <meta name="author" content="Jason H. Moore" />
-  <meta name="dcterms.date" content="2020-05-01" />
+  <meta name="dcterms.date" content="2020-05-02" />
   <meta name="keywords" content="machine learning, decision trees, heatmap, visualization, interpretability" />
   <title>treeheatr: an R package for interpretable decision tree visualizations</title>
   <style>
@@ -16,6 +16,68 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
@@ -29,8 +91,8 @@
   <meta name="citation_title" content="treeheatr: an R package for interpretable decision tree visualizations" />
   <meta property="og:title" content="treeheatr: an R package for interpretable decision tree visualizations" />
   <meta property="twitter:title" content="treeheatr: an R package for interpretable decision tree visualizations" />
-  <meta name="dc.date" content="2020-05-01" />
-  <meta name="citation_publication_date" content="2020-05-01" />
+  <meta name="dc.date" content="2020-05-02" />
+  <meta name="citation_publication_date" content="2020-05-02" />
   <meta name="dc.language" content="en-US" />
   <meta name="citation_language" content="en-US" />
   <meta name="dc.relation.ispartof" content="Manubot" />
@@ -51,9 +113,9 @@
   <meta name="citation_fulltext_html_url" content="https://trang1618.github.io/treeheatr-manuscript/" />
   <meta name="citation_pdf_url" content="https://trang1618.github.io/treeheatr-manuscript/manuscript.pdf" />
   <link rel="alternate" type="application/pdf" href="https://trang1618.github.io/treeheatr-manuscript/manuscript.pdf" />
-  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/4132845c16a417e56f1abb79a90861d234d1440c/" />
-  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/4132845c16a417e56f1abb79a90861d234d1440c/" />
-  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/4132845c16a417e56f1abb79a90861d234d1440c/manuscript.pdf" />
+  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/0af8f5f4046dab8ba70610f2f355c4ad0aacf25e/" />
+  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/0af8f5f4046dab8ba70610f2f355c4ad0aacf25e/" />
+  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/0af8f5f4046dab8ba70610f2f355c4ad0aacf25e/manuscript.pdf" />
   <meta property="og:type" content="article" />
   <meta property="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
@@ -67,10 +129,10 @@
 </header>
 <p><small><em>
 This manuscript
-(<a href="https://trang1618.github.io/treeheatr-manuscript/v/4132845c16a417e56f1abb79a90861d234d1440c/">permalink</a>)
+(<a href="https://trang1618.github.io/treeheatr-manuscript/v/0af8f5f4046dab8ba70610f2f355c4ad0aacf25e/">permalink</a>)
 was automatically generated
-from <a href="https://github.com/trang1618/treeheatr-manuscript/tree/4132845c16a417e56f1abb79a90861d234d1440c">trang1618/treeheatr-manuscript@4132845</a>
-on May 1, 2020.
+from <a href="https://github.com/trang1618/treeheatr-manuscript/tree/0af8f5f4046dab8ba70610f2f355c4ad0aacf25e">trang1618/treeheatr-manuscript@0af8f5f</a>
+on May 2, 2020.
 </em></small></p>
 <h2 id="authors">Authors</h2>
 <ul>
@@ -117,7 +179,7 @@ Specifically, state-of-the-art libraries such as Python’s <a href="https://git
 The <em>ggparty</em> R package allows the user to have full control of the representation of each node but fixes the terminal node widths, which can limit the ability to show more collective visualizations.</p>
 <p>We have developed the <em>treeheatr</em> package to utilize the leaf node space to show the data as a heatmap where the samples and features are optionally clustered to improve interpretation.
 After simple installation, the user can apply <em>treeheatr</em> on their classification or regression problem with a single function:</p>
-<pre><code>heat_tree(data, task = &#39;classification&#39;, target_lab = &#39;Outcome&#39;)</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">heat_tree</span>(data, <span class="dt">task =</span> <span class="st">&#39;classification&#39;</span>, <span class="dt">target_lab =</span> <span class="st">&#39;Outcome&#39;</span>)</span></code></pre></div>
 <p>This one line of code above will generate the conditional inference tree, perform clustering, and produce a decision tree-heatmap as a <em>ggplot</em> object that can be viewed in RStudio’s viewer pane, saved to a graphic file, or embedded in an RMarkdown document.
 This example assumes a classification problem, but one can also apply <em>treeheatr</em> on a regression problem by changing the <code>task</code> argument.</p>
 <p>This article is organized as follows.
@@ -130,11 +192,11 @@ Finally, we discuss general guidelines for creating effective decision tree-heat
 This dataset of 768 female patients at least 21 years old of Pima Indian heritage near Phoenix, Arizona was downloaded from <a href="https://www.kaggle.com/uciml/pima-indians-diabetes-database">Kaggle</a> and has eight features: age, number of pregnancies, plasma glucose concentration, diastolic blood pressure, skin fold thickness, 2-hour serum insulin, body mass index (BMI) and diabetes pedigree function.
 Detailed descriptions of these variables and data source can be found on the Kaggle page.</p>
 <p>The following lines of code computes and visualizes the conditional decision tree along with the heatmap containing features that are important for building this model (Fig. <a href="#fig:example">1</a>):</p>
-<pre><code>heat_tree(
-  data = diabetes,
-  target_lab = &#39;Diabetes status&#39;,
-  label_map = c(`0` = &#39;Negative&#39;, `1` = &#39;Positive&#39;)
-)</code></pre>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">heat_tree</span>(</span>
+<span id="cb2-2"><a href="#cb2-2"></a>  <span class="dt">data =</span> diabetes,</span>
+<span id="cb2-3"><a href="#cb2-3"></a>  <span class="dt">target_lab =</span> <span class="st">&#39;Diabetes status&#39;</span>,</span>
+<span id="cb2-4"><a href="#cb2-4"></a>  <span class="dt">label_map =</span> <span class="kw">c</span>(<span class="st">`</span><span class="dt">0</span><span class="st">`</span> =<span class="st"> &#39;Negative&#39;</span>, <span class="st">`</span><span class="dt">1</span><span class="st">`</span> =<span class="st"> &#39;Positive&#39;</span>)</span>
+<span id="cb2-5"><a href="#cb2-5"></a>)</span></code></pre></div>
 <p>The <code>heat_tree()</code> function takes a data frame, a character string indicating the column name associated with the outcome/phenotype (e.g., Diabetes status) and other optional arguments such as the mapping of the outcome label.</p>
 <div id="fig:example" class="fignos">
 <figure>
