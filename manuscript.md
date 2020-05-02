@@ -67,19 +67,19 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://trang1618.github.io/treeheatr-manuscript/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/5908eb46af302c91b2f6885ded81cf4d734ebaa0/" />
+  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/42af0eac16b2bf89110569352c77348c70511e01/" />
 
-  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/5908eb46af302c91b2f6885ded81cf4d734ebaa0/" />
+  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/42af0eac16b2bf89110569352c77348c70511e01/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/5908eb46af302c91b2f6885ded81cf4d734ebaa0/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/42af0eac16b2bf89110569352c77348c70511e01/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
   <meta property="twitter:card" content="summary_large_image" />
 
-  <meta property="og:image" content="https://github.com/trang1618/treeheatr-manuscript/raw/5908eb46af302c91b2f6885ded81cf4d734ebaa0/content/images/thumbnail.png" />
+  <meta property="og:image" content="https://github.com/trang1618/treeheatr-manuscript/raw/42af0eac16b2bf89110569352c77348c70511e01/content/images/thumbnail.png" />
 
-  <meta property="twitter:image" content="https://github.com/trang1618/treeheatr-manuscript/raw/5908eb46af302c91b2f6885ded81cf4d734ebaa0/content/images/thumbnail.png" />
+  <meta property="twitter:image" content="https://github.com/trang1618/treeheatr-manuscript/raw/42af0eac16b2bf89110569352c77348c70511e01/content/images/thumbnail.png" />
 
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
 
@@ -109,9 +109,9 @@ title: 'treeheatr: an R package for interpretable decision tree visualizations'
 
 <small><em>
 This manuscript
-([permalink](https://trang1618.github.io/treeheatr-manuscript/v/5908eb46af302c91b2f6885ded81cf4d734ebaa0/))
+([permalink](https://trang1618.github.io/treeheatr-manuscript/v/42af0eac16b2bf89110569352c77348c70511e01/))
 was automatically generated
-from [trang1618/treeheatr-manuscript@5908eb4](https://github.com/trang1618/treeheatr-manuscript/tree/5908eb46af302c91b2f6885ded81cf4d734ebaa0)
+from [trang1618/treeheatr-manuscript@42af0ea](https://github.com/trang1618/treeheatr-manuscript/tree/42af0eac16b2bf89110569352c77348c70511e01)
 on May 2, 2020.
 </em></small>
 
@@ -153,7 +153,7 @@ Working harmoniously with other packages, *treeheatr* empowers the user with ref
 
 ### Availability and implementation
 The *treeheatr* package is freely available under the permissive [MIT license](https://opensource.org/licenses/MIT) at <https://trang1618.github.io/treeheatr>.
-It comes with a detailed vignette that is automatically built with [GitHub Actions](https://github.com/features/actions) continuous integration.
+It comes with a [detailed vignette](https://trang1618.github.io/treeheatr/articles/explore.html) that is automatically built with [GitHub Actions](https://github.com/features/actions) continuous integration.
 
 ### Contact
 <ttle@pennmedicine.upenn.edu>
@@ -192,7 +192,7 @@ This example visualizes the conditional inference tree model built to predict wh
 This dataset of 768 female patients at least 21 years old of Pima Indian heritage near Phoenix, Arizona was downloaded from [Kaggle](https://www.kaggle.com/uciml/pima-indians-diabetes-database) and has eight features: age, number of pregnancies, plasma glucose concentration, diastolic blood pressure, skin fold thickness, 2-hour serum insulin, body mass index (BMI) and diabetes pedigree function.
 Detailed descriptions of these variables and data source can be found on the Kaggle page.
 
-The following lines of code computes and visualizes the conditional decision tree along with the heatmap containing features that are important for building this model (Fig. @fig:example):
+The following lines of code computes and visualizes the conditional decision tree along with the heatmap containing features that are important for constructing this model (Fig. @fig:example):
 
 ```r
 heat_tree(
@@ -226,7 +226,7 @@ This relative weight can be adjusted with the `lev_fac` parameter in `heat_tree(
 The default `lev_fac = 1.3` seems to provide aesthetically pleasing trees independent of the tree size (see [vignette](https://trang1618.github.io/treeheatr/articles/explore.html)).
 The user can define a customized layout for a specific set of nodes and combine that layout with the automatic layout for the other nodes.
 
-As default, *treeheatr* automatically performs clustering when organizing the heatmap.
+By default, *treeheatr* automatically performs clustering when organizing the heatmap.
 To order the features, clustering is run separately on the two groups of features, continuous and categorical, across all samples (including the outcome label, unless `clust_target = FALSE`).
 To order the samples, clustering is run on samples within each terminal node of all features. 
 *treeheatr* uses the `daisy()` function in the [*cluster*](https://cran.r-project.org/web/packages/cluster/) R package with the Gower metric [@doi:10.2307/2528823] to compute dissimilarity in both continuous and nominal categorical feature types. 
@@ -242,12 +242,12 @@ values computed in the conditional tree algorithm [@doi:10.1198/106186006X133933
 Striving for simplicity, *treeheatr* utilizes direct labeling to avoid unnecessary legends.
 For example, in classification, the leaf node labels have colors corresponding with different classes, e.g., purple for Negative and yellow for Positive diabetes status (Fig. @fig:example).
 As for feature values, the color scale legends may be misleading because these features may have been rescaled or normalized.
-As defaults, lighter colors are associated with higher values.
+By default, lighter colors are associated with higher values.
 This information can also be acquired from examining the edge labels.
 Specifically, in Fig. @fig:example, high glucose values (larger than 154 on the rightmost branch) can be easily mapped to samples with light yellow color in the last row.
 
 The integration of heatmap nicely complements the current techniques of visualizing decision trees.
-Node purity, a metric measuring the tree's performance, can be visualized from the distribution of true outcome label at each terminal node in the first row.
+Node purity, a metric measuring the tree's performance, can be visualized from the distribution of true outcome labels at each terminal node in the first row.
 Comparing these values with the terminal node label gives a visual estimate of how accurate the tree predictions are.
 Further, without specifically choose two features to show in a 2-D scatter plot, we can infer correlation structures among features in the heatmap.
 The additional clustering may also reveal sub-structures within a leaf node.
@@ -261,7 +261,7 @@ Implemented in an easily installed package with a detailed vignette, {treeheatr}
 This package has been released as open source software expected to receive contribution from other developers.
 
 Future works on *treeheatr* include enhancements such as supporting heatmap visualization of a holdout set and highlighting the tree branches that point to a specific holdout sample.
-Simple data preprocess beyond scaling and normalizing the column may be beneficial for handling outliers and missing data points and thus constructing more robust models and more informative visualizations.
+Simple data preprocess beyond scaling and normalizing the features may be beneficial for handling outliers and missing data points, which might result in more robust models and informative visualizations.
 
 ## Acknowledgements
 
