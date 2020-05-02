@@ -67,19 +67,19 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://trang1618.github.io/treeheatr-manuscript/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/42af0eac16b2bf89110569352c77348c70511e01/" />
+  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/e0d326216d89d1bba6c1c1b38613c0e3f758d0b2/" />
 
-  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/42af0eac16b2bf89110569352c77348c70511e01/" />
+  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/e0d326216d89d1bba6c1c1b38613c0e3f758d0b2/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/42af0eac16b2bf89110569352c77348c70511e01/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/e0d326216d89d1bba6c1c1b38613c0e3f758d0b2/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
   <meta property="twitter:card" content="summary_large_image" />
 
-  <meta property="og:image" content="https://github.com/trang1618/treeheatr-manuscript/raw/42af0eac16b2bf89110569352c77348c70511e01/content/images/thumbnail.png" />
+  <meta property="og:image" content="https://github.com/trang1618/treeheatr-manuscript/raw/e0d326216d89d1bba6c1c1b38613c0e3f758d0b2/content/images/thumbnail.png" />
 
-  <meta property="twitter:image" content="https://github.com/trang1618/treeheatr-manuscript/raw/42af0eac16b2bf89110569352c77348c70511e01/content/images/thumbnail.png" />
+  <meta property="twitter:image" content="https://github.com/trang1618/treeheatr-manuscript/raw/e0d326216d89d1bba6c1c1b38613c0e3f758d0b2/content/images/thumbnail.png" />
 
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
 
@@ -109,9 +109,9 @@ title: 'treeheatr: an R package for interpretable decision tree visualizations'
 
 <small><em>
 This manuscript
-([permalink](https://trang1618.github.io/treeheatr-manuscript/v/42af0eac16b2bf89110569352c77348c70511e01/))
+([permalink](https://trang1618.github.io/treeheatr-manuscript/v/e0d326216d89d1bba6c1c1b38613c0e3f758d0b2/))
 was automatically generated
-from [trang1618/treeheatr-manuscript@42af0ea](https://github.com/trang1618/treeheatr-manuscript/tree/42af0eac16b2bf89110569352c77348c70511e01)
+from [trang1618/treeheatr-manuscript@e0d3262](https://github.com/trang1618/treeheatr-manuscript/tree/e0d326216d89d1bba6c1c1b38613c0e3f758d0b2)
 on May 2, 2020.
 </em></small>
 
