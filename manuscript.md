@@ -67,15 +67,19 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://trang1618.github.io/treeheatr-manuscript/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/0af8f5f4046dab8ba70610f2f355c4ad0aacf25e/" />
+  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/d31e3995ef690d8c012b426f3724cb6b3b555175/" />
 
-  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/0af8f5f4046dab8ba70610f2f355c4ad0aacf25e/" />
+  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/d31e3995ef690d8c012b426f3724cb6b3b555175/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/0af8f5f4046dab8ba70610f2f355c4ad0aacf25e/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/d31e3995ef690d8c012b426f3724cb6b3b555175/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
   <meta property="twitter:card" content="summary_large_image" />
+
+  <meta property="og:image" content="https://github.com/trang1618/treeheatr-manuscript/raw/d31e3995ef690d8c012b426f3724cb6b3b555175/content/images/thumbnail.png" />
+
+  <meta property="twitter:image" content="https://github.com/trang1618/treeheatr-manuscript/raw/d31e3995ef690d8c012b426f3724cb6b3b555175/content/images/thumbnail.png" />
 
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
 
@@ -105,9 +109,9 @@ title: 'treeheatr: an R package for interpretable decision tree visualizations'
 
 <small><em>
 This manuscript
-([permalink](https://trang1618.github.io/treeheatr-manuscript/v/0af8f5f4046dab8ba70610f2f355c4ad0aacf25e/))
+([permalink](https://trang1618.github.io/treeheatr-manuscript/v/d31e3995ef690d8c012b426f3724cb6b3b555175/))
 was automatically generated
-from [trang1618/treeheatr-manuscript@0af8f5f](https://github.com/trang1618/treeheatr-manuscript/tree/0af8f5f4046dab8ba70610f2f355c4ad0aacf25e)
+from [trang1618/treeheatr-manuscript@d31e399](https://github.com/trang1618/treeheatr-manuscript/tree/d31e3995ef690d8c012b426f3724cb6b3b555175)
 on May 2, 2020.
 </em></small>
 
