@@ -4,7 +4,7 @@ author-meta:
 - Jason H. Moore
 bibliography:
 - content/manual-references.json
-date-meta: '2020-05-02'
+date-meta: '2020-06-25'
 header-includes: '<!--
 
   Manubot generated metadata rendered from header-includes-template.html.
@@ -23,9 +23,9 @@ header-includes: '<!--
 
   <meta property="twitter:title" content="treeheatr: an R package for interpretable decision tree visualizations" />
 
-  <meta name="dc.date" content="2020-05-02" />
+  <meta name="dc.date" content="2020-06-25" />
 
-  <meta name="citation_publication_date" content="2020-05-02" />
+  <meta name="citation_publication_date" content="2020-06-25" />
 
   <meta name="dc.language" content="en-US" />
 
@@ -67,19 +67,19 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://trang1618.github.io/treeheatr-manuscript/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/56cbd8fec38d03ec1248f2b0433b81c951948ed1/" />
+  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/78e20ccdadb858d9a1cb872a09e0680eeb502dcf/" />
 
-  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/56cbd8fec38d03ec1248f2b0433b81c951948ed1/" />
+  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/78e20ccdadb858d9a1cb872a09e0680eeb502dcf/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/56cbd8fec38d03ec1248f2b0433b81c951948ed1/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/78e20ccdadb858d9a1cb872a09e0680eeb502dcf/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
   <meta property="twitter:card" content="summary_large_image" />
 
-  <meta property="og:image" content="https://github.com/trang1618/treeheatr-manuscript/raw/56cbd8fec38d03ec1248f2b0433b81c951948ed1/content/images/thumbnail.png" />
+  <meta property="og:image" content="https://github.com/trang1618/treeheatr-manuscript/raw/78e20ccdadb858d9a1cb872a09e0680eeb502dcf/content/images/thumbnail.png" />
 
-  <meta property="twitter:image" content="https://github.com/trang1618/treeheatr-manuscript/raw/56cbd8fec38d03ec1248f2b0433b81c951948ed1/content/images/thumbnail.png" />
+  <meta property="twitter:image" content="https://github.com/trang1618/treeheatr-manuscript/raw/78e20ccdadb858d9a1cb872a09e0680eeb502dcf/content/images/thumbnail.png" />
 
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
 
@@ -109,10 +109,10 @@ title: 'treeheatr: an R package for interpretable decision tree visualizations'
 
 <small><em>
 This manuscript
-([permalink](https://trang1618.github.io/treeheatr-manuscript/v/56cbd8fec38d03ec1248f2b0433b81c951948ed1/))
+([permalink](https://trang1618.github.io/treeheatr-manuscript/v/78e20ccdadb858d9a1cb872a09e0680eeb502dcf/))
 was automatically generated
-from [trang1618/treeheatr-manuscript@56cbd8f](https://github.com/trang1618/treeheatr-manuscript/tree/56cbd8fec38d03ec1248f2b0433b81c951948ed1)
-on May 2, 2020.
+from [trang1618/treeheatr-manuscript@78e20cc](https://github.com/trang1618/treeheatr-manuscript/tree/78e20ccdadb858d9a1cb872a09e0680eeb502dcf)
+on June 25, 2020.
 </em></small>
 
 ## Authors
@@ -148,11 +148,12 @@ on May 2, 2020.
 
 ### Summary
 *treeheatr* is an R package for creating interpretable decision tree visualizations with the data represented as heatmaps at the tree's leaf nodes.
-Going beyond the if-then step-by-step logic of a decision tree, the inclusion of a heatmap offers a broader view of the classification or regression problem and provides meaningful clarification of different node splits in the tree.
-Working harmoniously with other packages, *treeheatr* empowers the user with refined controls over the statistical threshold and presentation of the tree and heatmap.
+The integrated presentation of the tree structure along with an overview of the data efficiently illustrates how the tree nodes split up the feature space and how well the tree model performs.
+This visualization can also be examined in depth to uncover the correlation structure in the data and importance of each feature in predicting the outcome.
+Implemented in an easily installed package with a detailed vignette, *treeheatr* can be a useful teaching tool to enhance students' understanding of a simple decision tree model before diving into more complex tree-based machine learning methods.
 
 ### Availability and implementation
-The *treeheatr* package is freely available under the permissive [MIT license](https://opensource.org/licenses/MIT) at <https://trang1618.github.io/treeheatr>.
+The *treeheatr* package is freely available under the permissive [MIT license](https://opensource.org/licenses/MIT) at <https://trang1618.github.io/treeheatr> and <https://cran.r-project.org/package=treeheatr>.
 It comes with a [detailed vignette](https://trang1618.github.io/treeheatr/articles/explore.html) that is automatically built with [GitHub Actions](https://github.com/features/actions) continuous integration.
 
 ### Contact
@@ -163,14 +164,22 @@ It comes with a [detailed vignette](https://trang1618.github.io/treeheatr/articl
 
 ## Introduction
 
-Tree-based algorithms such as random forests and gradient boosted trees are widely used techniques that comprise an important section of supervised machine learning.
-Visualizing and intepreting their building blocks, the single decision trees, are the first steps toward understanding these complex tree-based structures.
-However, it is difficult to incorporate the tree's predictive performance and the feature space in a single visualization.
-Existing softwares frequently treat all nodes in a decision tree similarly, leaving limited options for improving information presentation at the leaf nodes.
-Specifically, state-of-the-art libraries such as Python's [dtreeviz](https://github.com/parrt/dtreeviz), while producing aesthetic trees with detailed histograms at inner nodes, draw pie chart at leaf nodes.
-The *ggparty* R package allows the user to have full control of the representation of each node but fixes the leaf node widths, which can limit the ability to show more collective visualizations.
+Decision tree models comprise a set of machine learning algorithms widely used for predicting an outcome from a set of predictors or features.
+For specific problems, a single decision tree can provide predictions at desirable accuracy while remaining easy to understand and interpret [@doi:10.1038/s42256-020-0180-7].
+These models are also important building blocks of more complex tree-based structures such as random forests and gradient boosted trees.
 
-We have developed the *treeheatr* package to utilize the leaf node space to show the data as a heatmap where the samples and features are optionally clustered to improve interpretation.
+The simplicity of decision tree models allows for clear visualizations that can be incorporated with rich additional information such as the feature space.
+However, existing software frequently treats all nodes in a decision tree similarly, leaving limited options for improving information presentation at the leaf nodes.
+Specifically, the R library [*rpart.plot*](https://cran.r-project.org/web/packages/rpart.plot/rpart.plot.pdf) displays at each node its characteristics including the number of observations falling in that node, the proportion of those observations in each class, and the node's majority vote.
+Despite being potentially helpful, these statistics may not immediately convey important information about the tree such as its overall performance.
+Function `visTree()` from the R package [*visNetwork*](http://datastorm-open.github.io/visNetwork/tree.html) draws trees that are aesthetically pleasing but lack general information about the data and are difficult to interpret.
+The state-of-the-art Python's [*dtreeviz*](https://github.com/parrt/dtreeviz) produces decision trees with detailed histograms at inner nodes but still draw pie chart of different classes at leaf nodes.
+
+[*ggparty*](https://cran.r-project.org/web/packages/ggparty/vignettes/ggparty-graphic-partying.html) is a flexible R package that allows the user to have full control of the representation of each node.
+However, this library fixes the leaf node widths, which limits its ability to show more collective visualizations.
+We have developed the *treeheatr* package to incorporate the functionality of *ggparty* but also utilize the leaf node space to display the data as a heatmap, a popular visualization that uncovers clusters of samples and features in a dataset [@doi:10.1198/tas.2009.0033, @doi:10.1093/bioinformatics/btx657].
+In addition to the clusters, a heatmap also displays a useful general view of the dataset, e.g., how large it is or whether it contains any outliers.
+Integrated with a decision tree, the samples are clustered based on not only a distance metric calculated from the features but also which leaf nodes of the tree they belong to.
 After simple installation, the user can apply *treeheatr* on their classification or regression problem with a single function:
 ```r
 heat_tree(data, task = 'classification', target_lab = 'Outcome')
@@ -179,8 +188,8 @@ This one line of code above will generate the conditional inference tree, perfor
 This example assumes a classification problem, but one can also apply *treeheatr* on a regression problem by changing the `task` argument.
 
 This article is organized as follows.
-In Section 2, we show an example *treeheatr* application by employing its functions on a real-world clinical dataset from a study of diabetes mellitus in a high risk population of Pima Indians [@pmcid:PMC2245318].
-In Section 3, we describe in details the important functions and corresponding arguments in *treeheatr*.
+In Section 2, we present an example *treeheatr* application by employing its functions on a real-world clinical dataset from a study of COVID-19 patient outcome in Wuhan, China [@doi:10.1038/s42256-020-0180-7].
+In Section 3, we describe in detail the important functions and corresponding arguments in *treeheatr*.
 We demonstrate the flexibility the user has in tweaking these arguments to enhance understanding of the tree-based models applied on their dataset.
 Finally, we discuss general guidelines for creating effective decision tree-heatmap visualization.
 
@@ -188,29 +197,39 @@ Finally, we discuss general guidelines for creating effective decision tree-heat
 
 ## A simple example
 
-This example visualizes the conditional inference tree model built to predict whether or not a patient has diabetes from a dataset provided by the National Institute of Diabetes and Digestive and Kidney Diseases [@pmcid:PMC2245318].
-This dataset of 768 female patients at least 21 years old of Pima Indian heritage near Phoenix, Arizona was downloaded from [Kaggle](https://www.kaggle.com/uciml/pima-indians-diabetes-database) and has eight features: age, number of pregnancies, plasma glucose concentration, diastolic blood pressure, skin fold thickness, 2-hour serum insulin, body mass index (BMI) and diabetes pedigree function.
-Detailed descriptions of these variables and data source can be found on the Kaggle page.
+This example visualizes the conditional inference tree model built to predict whether or not a patient survived from COVID-19 in Wuhan, China [@doi:10.1038/s42256-020-0180-7].
+The dataset contains blood samples of 351 patients admitted to Tongji hospital between January 10 and February 18, 2020.
+Three features were selected based on their importance score from a multi-tree XGBoost model, including lactic dehydrogenase (LDH), lymphocyte levels and high-sensitivity C-reactive protein (hs_CRP).
+Detailed characteristics of the samples can be found in the original publication [@doi:10.1038/s42256-020-0180-7].
 
-The following lines of code computes and visualizes the conditional decision tree along with the heatmap containing features that are important for constructing this model (Fig. @fig:example):
+The following lines of code compute and visualize the conditional decision tree along with the heatmap containing features that are important for constructing this model (Fig. @fig:example):
 
 ```r
 heat_tree(
-  data = diabetes,
-  target_lab = 'Diabetes status',
-  label_map = c(`0` = 'Negative', `1` = 'Positive')
+  data = covid,
+  target_lab = 'Outcome',
+  label_map = c(`0` = 'Survived', `1` = 'Deceased')
 )
 ```
 
-The `heat_tree()` function takes a data frame, a character string indicating the column name associated with the outcome/phenotype (e.g., Diabetes status) and other optional arguments such as the mapping of the outcome label. 
+The `heat_tree()` function takes a data frame, a character string specifying the column name associated with the phenotype/outcome and other optional arguments such as the mapping of the outcome label. 
 
-![A decision tree-heatmap for predicting whether an individual has diabetes.](images/diabetes.png){#fig:example}
+![A decision tree-heatmap for predicting whether or not a patient survived from COVID-19 in Wuhan, China. The heatmap colors present the relative value of a sample compared to the rest of the group on each feature.](images/covid.png){#fig:example}
 
-In this example, we observe that glucose level is the first determining factors in predicting diabetes status.
-When this value is above 127 but not larger than 154 (observations with light green glucose value), BMI helps further distinguish the group with diabetes from the other.
-On the left branches, while these samples are predicted to not have diabetes by majority voting, the leaf nodes have different purity.
+In the decision tree, the leaf nodes are labeled based on their majority votes and colored to correlate with the true outcome.
+On the right split of hs_CRP (hs_CRP ≤ 52.5 and hs_CRP > 52.5), although individuals of both branches are all predicted to survive by majority voting, the leaf nodes have different purity, indicating different confidence levels the model has in classifying samples in the two nodes.
 These seemingly non-beneficial splits present an opportunity to teach machine learning novices the different measures of node impurity such as the Gini index or cross-entropy [@isbn:978-0387848570].
-General patterns in the heatmap for this example are admittedly difficult to parse because of the large number of observations, but we can still observe similar color patterns between age and the number of pregnancies indicating a correlation between these two features, which is expected.
+
+In the heatmap, each (very thin) column is a sample, and each row represents a feature or the outcome.
+For a specific feature, the color shows the relative value of a sample compared to the rest of the group on that feature; higher values are associated with lighter colors.
+Within the heatmap, similar color patterns between LDH and hs_CRP suggest a positive correlation between these two features, which is expected because they are both systemic inflammation markers.
+
+Together, the tree and heatmap give us an approximation of the proportion of samples per leaf and the model's confidence in its classification of samples in each leaf.
+Three main blocks of different Lymphocyte levels in the heatmap illustrate its importance as a determining factor in predicting patient outcome.
+When this value is below 12.7 but larger than 5.5 (observations with dark green Lymphocyte value), hs_CRP helps further distinguish the group that survived from the other.
+Here, if we focus on the hs_CRP > 35.5 branch, we notice that the corresponding hs_CRP colors range from light green to yellow (> 0.5), illustrating that the individuals in this branch have higher hs_CRP than the median of the group.
+This connection is immediate with the two components visualized together but would not have been possible with the tree model alone.
+In summary, the tree and heatmap integration provides a comprehensive view of the data along with key characteristics of the decision tree.
 
 ## Methods
 
@@ -220,53 +239,60 @@ Conditional trees support unbiased selection among covariates and avoid overfitt
 
 While *ggparty* assumes fixed leaf node widths, *treeheatr* employs a flexible node layout to accommodate the different number of samples shown in the heatmap at each leaf node.
 This new node layout structure supports various leaf node widths, prevents crossings of different tree branches, and generalizes as the trees grow in size.
-This new layout weighs the *x*-coordinate of the parent node according to the level of the child nodes in order to avoid crossing of tree branches.
+This new layout weighs the *x*-coordinate of the parent node according to the level of the child nodes in order to avoid branch crossing.
 This relative weight can be adjusted with the `lev_fac` parameter in `heat_tree()`.
 `lev_fac = 1` sets the parent node's *x*-coordinate perfectly in the middle of those of its child nodes.
-The default `lev_fac = 1.3` seems to provide aesthetically pleasing trees independent of the tree size (see [vignette](https://trang1618.github.io/treeheatr/articles/explore.html)).
-The user can define a customized layout for a specific set of nodes and combine that layout with the automatic layout for the other nodes.
+The default `lev_fac = 1.3` seems to provide [optimal node layout](https://trang1618.github.io/treeheatr/articles/explore.html#smart-node-layout) independent of the tree size.
+The user can define a customized layout for a specific set of nodes and combine that layout with the automatic layout for the remaining nodes.
 
 By default, *treeheatr* automatically performs clustering when organizing the heatmap.
-To order the features, clustering is run separately on the two groups of features, continuous and categorical, across all samples (including the outcome label, unless `clust_target = FALSE`).
-To order the samples, clustering is run on samples within each leaf node of all features. 
-*treeheatr* uses the `daisy()` function in the [*cluster*](https://cran.r-project.org/web/packages/cluster/) R package with the Gower metric [@doi:10.2307/2528823] to compute dissimilarity in both continuous and nominal categorical feature types. 
-We note that, while there is no definitive guideline for proper weighting of features of different types, the goal of the clustering step is to improve our interpretability of the tree-based model and not to make precise inference about each cluster.
+To order the samples, clustering is run on samples within each leaf node of all features and outcome label, unless `clust_target = FALSE`.
+*treeheatr* uses the `daisy()` function in the [*cluster*](https://cran.r-project.org/package=cluster) R package with the Gower metric [@doi:10.2307/2528823] to compute the dissimilarity matrix of a dataset that may have both continuous and nominal categorical feature types.
+Then, the samples are optimally reordered using the [*seriation*](https://cran.r-project.org/package=cluster/) package [@doi:10.18637/jss.v025.i03].
+We note that, while there is no definitive guideline for proper weighting of features of different types, the goal of the clustering step is to reduce the amount of stochasticity in the heatmap and not to make precise inference about each cluster.
 Therefore, *treeheatr* does not draw dendrograms and allows for the inclusion of outcome labels in clustering the samples.
 
 In a visualization, it is difficult to strike the balance between enhancing understanding and overloading information.
 We believe showing a heatmap at the leaf node space provides additional information of the data in an elegant way that is not overwhelming and may even simplify the model's interpretation. 
 We left it for the user to decide what type of information to be displayed at the inner nodes via different *geom* objects (e.g., `geom_node_plot`, `geom_edge_label`, etc.) in the *ggparty* package.
-For example, one may choose to show the [distribution](https://github.com/martin-borkovec/ggparty/wiki/1-Motivating-Example) of the features and how they split the samples at these decision nodes, or each feature's corresponding Bonferroni-adjusted *P*
-values computed in the conditional tree algorithm [@doi:10.1198/106186006X133933].
+For example, one may choose to show the [distribution](https://github.com/martin-borkovec/ggparty/wiki/1-Motivating-Example) of the features and how they split the samples at these decision nodes, or each feature's corresponding Bonferroni-adjusted *P* values computed in the conditional tree algorithm [@doi:10.1198/106186006X133933].
 
 Striving for simplicity, *treeheatr* utilizes direct labeling to avoid unnecessary legends.
-For example, in classification, the leaf node labels have colors corresponding with different classes, e.g., purple for Negative and yellow for Positive diabetes status (Fig. @fig:example).
-As for feature values, the color scale legends may be misleading because these features may have been rescaled or normalized.
-By default, lighter colors are associated with higher values.
-This information can also be acquired from examining the edge labels.
-Specifically, in Fig. @fig:example, high glucose values (larger than 154 on the rightmost branch) can be easily mapped to samples with light yellow color in the last row.
+For example, in classification, the leaf node labels have colors corresponding with different classes, e.g., purple for Deceased and green for Survived in the COVID-19 dataset (Fig. @fig:example).
+As for feature values, by default, the color scale ranges from 0 to 1 and indicates the relative value of a sample compared to the rest of the group on each feature.
+Linking the color values of a particular feature to the corresponding edge labels can reveal additional information that is not available with the decision tree alone.
+
+In addition to the main dataset, the user can supply to `heat_tree()` a validation dataset via the `data_test` argument.
+As a result, `heat_tree()` will train the conditional tree on the original training dataset, draw the decision tree-heatmap on the testing dataset, and, if desired, print next to the tree [its performance](https://trang1618.github.io/treeheatr/articles/explore.html#apply-the-learned-tree-on-externalholdouttestvalidation-dataset) on the test set according to specified metrics (e.g., balanced accuracy for classification or root mean squared error for regression problem).
+Furthermore, if the default conditional tree is not optimal, one can use the `custom_tree` argument to [manually define](https://trang1618.github.io/treeheatr/articles/explore.html#youre-the-warren-beatty-of-your-heat_tree) their own tree of class `party` or `partynode`.
 
 The integration of heatmap nicely complements the current techniques of visualizing decision trees.
 Node purity, a metric measuring the tree's performance, can be visualized from the distribution of true outcome labels at each leaf node in the first row.
 Comparing these values with the leaf node label gives a visual estimate of how accurate the tree predictions are.
-Further, without specifically choose two features to show in a 2-D scatter plot, we can infer correlation structures among features in the heatmap.
+Further, without specifically choosing two features to show in a 2-D scatter plot, we can infer correlation structures among features in the heatmap.
 The additional clustering may also reveal sub-structures within a leaf node.
 
 
 ## Conclusion
 
-In this paper, we presented the new type of integrated visualization of decision trees and heatmaps, which provides a comprehensive data overview as well as model interpretation.
-We demonstrated that this integration uncovers meaningful patterns among the predictive features and highlights the important elements of conditional trees including feature splits and several leaf node characteristics such as prediction value, impurity and number of leaf samples.
-Implemented in an easily installed package with a detailed vignette, *treeheatr* can be a useful teaching tool to enhance students' understanding of this fundamental model before diving into more complex tree-based machine learning methods.
-This package has been released as open source software expected to receive contribution from other developers.
+In this paper, we presented a new type of integrated visualization of decision trees and heatmaps, which provides a comprehensive data overview as well as model interpretation.
+We demonstrated that this integration uncovers meaningful patterns among the predictive features and highlights the important elements of decision trees including feature splits and several leaf node characteristics such as prediction value, impurity and number of leaf samples.
+Its detailed vignette makes *treeheatr* a useful teaching tool to enhance students' understanding of this fundamental model before diving into more complex tree-based machine learning methods.
 
-Future works on *treeheatr* include enhancements such as supporting heatmap visualization of a holdout set and highlighting the tree branches that point to a specific holdout sample.
-Simple data preprocess beyond scaling and normalizing the features may be beneficial for handling outliers and missing data points, which might result in more robust models and informative visualizations.
+*treeheatr* is scalable to large datasets.
+For example, `heat_tree()` runtime on the [waveform dataset](http://archive.ics.uci.edu/ml/datasets/waveform+database+generator+(version+2)) with 5000 observations and 40 features was approximately 80 seconds on a machine with a 2.2 GHz Intel Core i7 processor and 8GB of RAM.
+However, as with other visualization tools, the tree's interpretation becomes more difficult as the feature space expands.
+Thus, for high dimensional datasets, it's potentially beneficial to perform feature selection to reduce the number of features or random sampling to reduce the number of observations prior to plotting the tree.
+Moreover, when the single tree does not perform well and the average node purity is low, it can be challenging to interpret the heatmap because clear signal cannot emerge if the features have low predictability.
+
+Future work on *treeheatr* includes enhancements such as support for left-to-right orientation and highlighting the tree branches that point to a specific sample.
+We will also investigate other data preprocess and seriation options that might result in more robust models and informative visualizations.
 
 ## Acknowledgements
 
-The *treeheatr* package was made possible by leveraging integral R packages including *ggplot2* [@isbn:978-0387981406], *partykit* [@url:http://jmlr.org/papers/v16/hothorn15a.html], [*ggparty*](https://github.com/martin-borkovec/ggparty) and many others.
-We would also like to thank Daniel Himmelstein for his helpful comments on the package's continuous integration configuration.
+The *treeheatr* package was made possible by leveraging integral R packages including *ggplot2* [@isbn:978-0387981406], *partykit* [@url:http://jmlr.org/papers/v16/hothorn15a.html], [*ggparty*](https://github.com/martin-borkovec/ggparty), *heatmaply* [@doi:10.1093/bioinformatics/btx657] and many others.
+We would also like to thank Daniel Himmelstein for his helpful comments on the package's licensing and continuous integration configuration.
+Finally, we thank two anonymous reviewers whose helpful feedback helped improve the package and clarify this manuscript.
 
 ## References {.page_break_before}
 
