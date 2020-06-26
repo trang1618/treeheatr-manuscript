@@ -82,9 +82,8 @@ if [ "${BUILD_DOCX:-}" = "true" ]; then
     --defaults="$PANDOC_DEFAULTS_DIR/docx.yaml"
 fi
 
-if [ "${BUILD_LATEX:-}" = "true" ];
-then
-  echo "Exporting LATEX manuscript"
+if [ "${BUILD_LATEX:-}" = "true" ]; then
+  echo >&2 "Exporting LATEX manuscript"
   pandoc \
     --defaults="$PANDOC_DEFAULTS_DIR/common.yaml" \
     --to=latex \
