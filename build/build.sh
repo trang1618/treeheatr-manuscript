@@ -82,6 +82,18 @@ if [ "${BUILD_DOCX:-}" = "true" ]; then
     --defaults="$PANDOC_DEFAULTS_DIR/docx.yaml"
 fi
 
+if [ "$BUILD_LATEX" = "true" ];
+then
+  echo "Exporting LATEX manuscript"
+  pandoc \
+    --defaults="$PANDOC_DEFAULTS_DIR/common.yaml" \
+    --to=latex \
+    --number-sections \
+    --resource-path=.:content \
+    --standalone \
+    --output=output/manuscript.tex
+fi
+
 # Spellcheck
 if [ "${SPELLCHECK:-}" = "true" ]; then
   export ASPELL_CONF="add-extra-dicts $(pwd)/build/assets/custom-dictionary.txt; ignore-case true"
