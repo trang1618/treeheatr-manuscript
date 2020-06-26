@@ -1,14 +1,33 @@
 library(treeheatr)
 library(tidyverse)
 
-diabetes <- read_csv('diabetes.csv') %>% 
-  rename('Diabetes status' = Outcome)
+selected_train <- train_covid %>%
+  select(
+    LDH = 'Lactate dehydrogenase',
+    hs_CRP = 'High sensitivity C-reactive protein',
+    Lymphocyte = '(%)lymphocyte',
+    Outcome = Type2
+  ) %>%
+  na.omit()
 
-heat_tree(
-  data = diabetes,
-  target_lab = 'Diabetes status',
-  label_map = c(`0` = 'Negative', `1` = 'Positive'),
-  target_cols = NULL
-) %>% 
-  ggsave(filename = '../content/images/diabetes.png', .,
-         height = 3.5, width = 7)
+p <- heat_tree(
+  data = selected_train,
+  target_lab = 'Outcome',
+  label_map = c(`0` = 'Survived', `1` = 'Deceased'),
+  target_cols = c('#798234', '#d46780'),
+  cont_legend = TRUE
+)
+
+ggsave(filename = '../content/images/covid.png',
+       p,
+       height = 3.5,
+       width = 7)
+
+# pdf('../content/images/covid.pdf', height = 3.5, width = 7)
+# p
+# dev.off()
+#
+# setEPS(height = 3.5, width = 7)
+# postscript('../content/images/covid.eps')
+# p
+# dev.off()
