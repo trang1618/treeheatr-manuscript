@@ -4,7 +4,7 @@ author-meta:
 - Jason H. Moore
 bibliography:
 - content/manual-references.json
-date-meta: '2020-06-25'
+date-meta: '2020-06-29'
 header-includes: '<!--
 
   Manubot generated metadata rendered from header-includes-template.html.
@@ -23,9 +23,9 @@ header-includes: '<!--
 
   <meta property="twitter:title" content="treeheatr: an R package for interpretable decision tree visualizations" />
 
-  <meta name="dc.date" content="2020-06-25" />
+  <meta name="dc.date" content="2020-06-29" />
 
-  <meta name="citation_publication_date" content="2020-06-25" />
+  <meta name="citation_publication_date" content="2020-06-29" />
 
   <meta name="dc.language" content="en-US" />
 
@@ -67,19 +67,19 @@ header-includes: '<!--
 
   <link rel="alternate" type="application/pdf" href="https://trang1618.github.io/treeheatr-manuscript/manuscript.pdf" />
 
-  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/78e20ccdadb858d9a1cb872a09e0680eeb502dcf/" />
+  <link rel="alternate" type="text/html" href="https://trang1618.github.io/treeheatr-manuscript/v/6e68bdfb6834b6ed60b14c4ce1ffaf866b41615c/" />
 
-  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/78e20ccdadb858d9a1cb872a09e0680eeb502dcf/" />
+  <meta name="manubot_html_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/6e68bdfb6834b6ed60b14c4ce1ffaf866b41615c/" />
 
-  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/78e20ccdadb858d9a1cb872a09e0680eeb502dcf/manuscript.pdf" />
+  <meta name="manubot_pdf_url_versioned" content="https://trang1618.github.io/treeheatr-manuscript/v/6e68bdfb6834b6ed60b14c4ce1ffaf866b41615c/manuscript.pdf" />
 
   <meta property="og:type" content="article" />
 
   <meta property="twitter:card" content="summary_large_image" />
 
-  <meta property="og:image" content="https://github.com/trang1618/treeheatr-manuscript/raw/78e20ccdadb858d9a1cb872a09e0680eeb502dcf/content/images/thumbnail.png" />
+  <meta property="og:image" content="https://github.com/trang1618/treeheatr-manuscript/raw/6e68bdfb6834b6ed60b14c4ce1ffaf866b41615c/content/images/thumbnail.png" />
 
-  <meta property="twitter:image" content="https://github.com/trang1618/treeheatr-manuscript/raw/78e20ccdadb858d9a1cb872a09e0680eeb502dcf/content/images/thumbnail.png" />
+  <meta property="twitter:image" content="https://github.com/trang1618/treeheatr-manuscript/raw/6e68bdfb6834b6ed60b14c4ce1ffaf866b41615c/content/images/thumbnail.png" />
 
   <link rel="icon" type="image/png" sizes="192x192" href="https://manubot.org/favicon-192x192.png" />
 
@@ -109,10 +109,10 @@ title: 'treeheatr: an R package for interpretable decision tree visualizations'
 
 <small><em>
 This manuscript
-([permalink](https://trang1618.github.io/treeheatr-manuscript/v/78e20ccdadb858d9a1cb872a09e0680eeb502dcf/))
+([permalink](https://trang1618.github.io/treeheatr-manuscript/v/6e68bdfb6834b6ed60b14c4ce1ffaf866b41615c/))
 was automatically generated
-from [trang1618/treeheatr-manuscript@78e20cc](https://github.com/trang1618/treeheatr-manuscript/tree/78e20ccdadb858d9a1cb872a09e0680eeb502dcf)
-on June 25, 2020.
+from [trang1618/treeheatr-manuscript@6e68bdf](https://github.com/trang1618/treeheatr-manuscript/tree/6e68bdfb6834b6ed60b14c4ce1ffaf866b41615c)
+on June 29, 2020.
 </em></small>
 
 ## Authors
